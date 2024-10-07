@@ -15,7 +15,7 @@ router.get("/getAllUsers", async (req, res) => {
 
 // Add a new user with hashed password
 router.post("/addUser", async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
 
   if (!username) {
     return res.status(400).json({ msg: "Name is required" });
@@ -34,6 +34,7 @@ router.post("/addUser", async (req, res) => {
       username,
       email,
       password_hash,
+      role,
     });
 
     const user = await newUser.save();
@@ -45,7 +46,7 @@ router.post("/addUser", async (req, res) => {
 
 // Update user with hashed password if provided
 router.put("/updateUser/:id", async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
 
   try {
     const user = await User.findById(req.params.id);
@@ -57,6 +58,7 @@ router.put("/updateUser/:id", async (req, res) => {
     // Update fields if provided
     user.username = username || user.username;
     user.email = email || user.email;
+    user.role = role || user.role;
 
     // Hash the new password if it is provided
     if (password) {
@@ -67,6 +69,7 @@ router.put("/updateUser/:id", async (req, res) => {
     await user.save();
     res.json(user);
   } catch (err) {
+    console.error(err); // Log the error for debugging
     res.status(500).send("Server Error");
   }
 });

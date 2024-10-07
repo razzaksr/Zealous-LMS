@@ -3,7 +3,6 @@ const express = require("express");
 const mongoose = require("./config/db");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const adminController = require("./controllers/adminController");
 const adminDashboardMetricController = require("./controllers/adminDashboardMetricController");
 const codingTestController = require("./controllers/codingTestController");
 const languageController = require("./controllers/languageController");
@@ -25,7 +24,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Use Routes
-app.use("/admins", adminController);
 app.use("/adminMetrics", adminDashboardMetricController);
 app.use("/codingTests", codingTestController);
 app.use("/languages", languageController);
