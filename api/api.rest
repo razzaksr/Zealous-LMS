@@ -1,0 +1,66 @@
+### user apis
+GET http://localhost:5000/users/getAllUsers
+
+###
+
+POST http://localhost:5000/users/addUser
+Content-Type: application/json
+
+{
+  "username": "JohnDoe",
+  "email": "john.doe@example.com",
+  "password_hash": "hashed_password_here"
+}
+
+###
+
+PUT http://localhost:5000/users/updateUser/6702a2744168859b6763a483
+Content-Type: application/json
+
+{
+  "username": "Jane"
+}
+
+###
+
+DELETE http://localhost:5000/users/deleteUser/6702a2744168859b6763a483
+
+################################################
+
+### problem apis
+
+GET http://localhost:5000/problems/getAllProblems
+
+###
+
+POST http://localhost:5000/problems/addProblem
+Content-Type: application/json
+
+{
+  "problem_id": 1,
+  "title": "Sample Problem",
+  "description": "This is a sample problem description.",
+  "difficulty": "easy",
+  "input_format": "integer",
+  "output_format": "integer",
+  "sample_input": "5",
+  "constraints": "1 <= N <= 1000",
+  "time_limit": 2,
+  "memory_limit": 128,
+  "created_by": 1
+}
+
+###
+
+PUT http://localhost:5000/problems/updateProblem/6702b5b151bf0de36c24b15e
+Content-Type: application/json
+
+{
+  "title": "Updated Problem"
+}
+
+###
+
+DELETE http://localhost:5000/problems/deleteProblem/6702b5b151bf0de36c24b15e
+
+################################################
