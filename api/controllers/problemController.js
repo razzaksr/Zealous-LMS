@@ -1,10 +1,10 @@
 const express = require('express');
 const Problem = require('../models/Problems');
 
-const problemController = express.Router();
+const router = express.Router();
 
 // GET all problems
-problemController.get('/getAllProblems', async (req, res) => {
+router.get('/getAllProblems', async (req, res) => {
   try {
     const problems = await Problem.find();
     res.json(problems);
@@ -14,7 +14,7 @@ problemController.get('/getAllProblems', async (req, res) => {
 });
 
 // POST a new problem
-problemController.post('/addProblem', async (req, res) => {
+router.post('/addProblem', async (req, res) => {
   const { problem_id, title, description, difficulty, input_format, output_format, sample_input, constraints, time_limit, memory_limit, created_by } = req.body;
 
   if (!problem_id || !title || !description || !difficulty) {
@@ -44,7 +44,7 @@ problemController.post('/addProblem', async (req, res) => {
 });
 
 // PUT (update) a problem
-problemController.put('/updateProblem/:id', async (req, res) => {
+router.put('/updateProblem/:id', async (req, res) => {
   const { title, description, difficulty, input_format, output_format, sample_input, constraints, time_limit, memory_limit } = req.body;
 
   try {
@@ -72,7 +72,7 @@ problemController.put('/updateProblem/:id', async (req, res) => {
 });
 
 // DELETE a problem
-problemController.delete('/deleteProblem/:id', async (req, res) => {
+router.delete('/deleteProblem/:id', async (req, res) => {
   try {
     const problem = await Problem.findByIdAndDelete(req.params.id);
 
@@ -86,4 +86,4 @@ problemController.delete('/deleteProblem/:id', async (req, res) => {
   }
 });
 
-module.exports = problemController;
+module.exports = router;

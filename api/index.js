@@ -1,10 +1,21 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('./config/db');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const userController = require('./controllers/userController');
-const problemController = require('./controllers/problemController');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("./config/db");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const adminController = require("./controllers/adminController");
+const adminDashboardMetricController = require("./controllers/adminDashboardMetricController");
+const codingTestController = require("./controllers/codingTestController");
+const languageController = require("./controllers/languageController");
+const leaderboardController = require("./controllers/leaderboardController");
+const mcqQuestionController = require("./controllers/mcqQuestionController");
+const mcqTestController = require('./controllers/mcqTestController');
+const problemController = require("./controllers/problemController");
+const submissionController = require('./controllers/submissionController');
+const tagController = require('./controllers/tagController');
+const testcaseController = require('./controllers/testcaseController');
+const userController = require("./controllers/userController");
+const userTestResultController = require('./controllers/userTestResultController');
 
 const app = express();
 const PORT = process.env.PORT;
@@ -14,8 +25,19 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Use Routes
-app.use('/users', userController);
-app.use('/problems', problemController);
+app.use("/admins", adminController);
+app.use("/adminMetrics", adminDashboardMetricController);
+app.use("/codingTests", codingTestController);
+app.use("/languages", languageController);
+app.use("/leaderboards", leaderboardController);
+app.use("/mcqQuestions", mcqQuestionController);
+app.use("/mcqTest", mcqTestController);
+app.use("/problems", problemController);
+app.use("/submissions", submissionController);
+app.use("/tags", tagController);
+app.use("/testcases", testcaseController);
+app.use("/users", userController);
+app.use("/userTestResults", userTestResultController);
 
 // Start the server
 app.listen(PORT, () => {
