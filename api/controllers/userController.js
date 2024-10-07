@@ -14,11 +14,46 @@ router.get("/getAllUsers", async (req, res) => {
 });
 
 // Add a new user with hashed password
+// router.post("/addUser", async (req, res) => {
+//   const { username, email, password, role } = req.body;
+
+//   if (!username) {
+//     return res.status(400).json({ msg: "Name is required" });
+//   }
+
+//   if (!password) {
+//     return res.status(400).json({ msg: "Password is required" });
+//   }
+
+//   try {
+//     // Hash the password before saving to the database
+//     const salt = await bcrypt.genSalt(10);
+//     const password_hash = await bcrypt.hash(password, salt);
+
+//     const newUser = new User({
+//       username,
+//       email,
+//       password_hash,
+//       role,
+//     });
+
+//     const user = await newUser.save();
+//     res.status(201).json(user);
+//   } catch (err) {
+//     res.status(500).send("Server Error");
+//   }
+// });
+
 router.post("/addUser", async (req, res) => {
   const { username, email, password, role } = req.body;
 
+  // Validate required fields
   if (!username) {
-    return res.status(400).json({ msg: "Name is required" });
+    return res.status(400).json({ msg: "Username is required" });
+  }
+
+  if (!email) {
+    return res.status(400).json({ msg: "Email is required" });
   }
 
   if (!password) {
@@ -26,6 +61,12 @@ router.post("/addUser", async (req, res) => {
   }
 
   try {
+    // Check if username or email already exists
+    const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+    if (existingUser) {
+      return res.status(400).json({ msg: "Username or email already exists" });
+    }
+
     // Hash the password before saving to the database
     const salt = await bcrypt.genSalt(10);
     const password_hash = await bcrypt.hash(password, salt);
@@ -40,7 +81,8 @@ router.post("/addUser", async (req, res) => {
     const user = await newUser.save();
     res.status(201).json(user);
   } catch (err) {
-    res.status(500).send("Server Error");
+    console.error(err); // Log the error for debugging
+    res.status(500).json({ msg: "Server Error" });
   }
 });
 
