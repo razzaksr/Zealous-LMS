@@ -12,23 +12,26 @@ POST http://localhost:5000/users/addUser
 Content-Type: application/json
 
 {
-  "username": "JohnDoe",
-  "email": "john.doe@example.com",
-  "password_hash": "hashed_password_here"
+  "username": "Vijay123",
+  "email": "vijayaprakash885@gmail.com",
+  "password": "Vijay@123",
+  "role": "admin",
+  "created_at": "2024-10-07T10:30:00Z",
+  "updated_at": "2024-10-07T10:30:00Z"
 }
 
 ###
 
-PUT http://localhost:5000/users/updateUser/6702a2744168859b6763a483
+PUT http://localhost:5000/users/updateUser/6703b9aab42a232a9226e82d
 Content-Type: application/json
 
 {
-  "username": "Jane"
+  "username": "Vijay1234"
 }
 
 ###
 
-DELETE http://localhost:5000/users/deleteUser/6702a2744168859b6763a483
+DELETE http://localhost:5000/users/deleteUser/67037dc49e4560fd9dc32e1b
 
 ################################################
 
@@ -69,3 +72,66 @@ Content-Type: application/json
 DELETE http://localhost:5000/problems/deleteProblem/6702b5b151bf0de36c24b15e
 
 ################################################
+### Admin Dashboard Metrics
+POST http://localhost:5000/adminMetrics/addMetric
+Content-Type: application/json
+
+{
+  "admin_id": "6703b9aab42a232a9226e82d",  
+  "total_mcq_tests": 200,
+  "total_coding_tests": 301,
+  "average_score_mcq": 75.5,
+  "average_score_coding": 82.3
+}
+
+
+### Read All Metrics
+GET http://localhost:5000/adminMetrics/getAllMetrics
+
+### Read Metric by ID
+GET http://localhost:5000/adminMetrics/getMetricById/6703ba9fb42a232a9226e837
+# Replace <metric_id> with the actual ID of the metric you want to retrieve.
+
+### Update Metric by ID
+PUT http://localhost:5000/adminMetrics/updateMetric/6703ba9fb42a232a9226e837
+Content-Type: application/json
+
+{
+  "total_users":10
+}
+
+### Delete Metric by ID
+DELETE http://localhost:5000/adminMetrics/deleteMetric/6703bb48b42a232a9226e83f
+
+
+#######################################################################
+### CREATE Coding Test
+POST http://localhost:5000/codingTests/addCodingTest
+Content-Type: application/json
+
+{
+    "test_id": 2,
+    "admin_id": 1,
+    "coding_title": "Sample Coding Test",
+    "description": "This is a description of the coding test.",
+    "testcase_id": 101
+}
+
+### READ All Coding Tests
+GET http://localhost:5000/codingTests/getAllCodingTests
+
+### READ Coding Test by ID
+GET http://localhost:5000/codingTests/getCodingTestById/6703bc63c801c34498e56493
+
+### UPDATE Coding Test
+PUT http://localhost:5000/codingTests/updateCodingTest/6703bc63c801c34498e56493
+Content-Type: application/json
+
+{
+    "coding_title": "Updated Coding Test Title",
+    "description": "Updated description for the coding test.",
+    "testcase_id": 102
+}
+
+### DELETE Coding Test
+DELETE http://localhost:5000/codingTests/deleteCodingTest/6703bc63c801c34498e56493
