@@ -1,8 +1,10 @@
 const User = require("../models/Users");
 const express = require("express");
-const userController = express.Router();
+const router = express.Router();
+const bcrypt = require("bcryptjs");
 
-userController.get("/getAllUsers", async (req, res) => {
+// Get all users
+router.get("/getAllUsers", async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
@@ -11,18 +13,28 @@ userController.get("/getAllUsers", async (req, res) => {
   }
 });
 
-userController.post("/addUser", async (req, res) => {
-  const { username, email, password_hash } = req.body;
+// Add a new user with hashed password
+router.post("/addUser", async (req, res) => {
+  const { username, email, password, role } = req.body;
 
   if (!username) {
     return res.status(400).json({ msg: "Name is required" });
   }
 
+  if (!password) {
+    return res.status(400).json({ msg: "Password is required" });
+  }
+
   try {
+    // Hash the password before saving to the database
+    const salt = await bcrypt.genSalt(10);
+    const password_hash = await bcrypt.hash(password, salt);
+
     const newUser = new User({
       username,
       email,
       password_hash,
+      role,
     });
 
     const user = await newUser.save();
@@ -32,8 +44,9 @@ userController.post("/addUser", async (req, res) => {
   }
 });
 
-userController.put("/updateUser/:id", async (req, res) => {
-  const { username, email, password_hash } = req.body; // Updated to reflect the correct fields
+// Update user with hashed password if provided
+router.put("/updateUser/:id", async (req, res) => {
+  const { username, email, password, role } = req.body;
 
   try {
     const user = await User.findById(req.params.id);
@@ -42,18 +55,27 @@ userController.put("/updateUser/:id", async (req, res) => {
       return res.status(404).json({ msg: "User not found" });
     }
 
+    // Update fields if provided
     user.username = username || user.username;
     user.email = email || user.email;
-    user.password_hash = password_hash || user.password_hash;
+    user.role = role || user.role;
+
+    // Hash the new password if it is provided
+    if (password) {
+      const salt = await bcrypt.genSalt(10);
+      user.password_hash = await bcrypt.hash(password, salt);
+    }
 
     await user.save();
     res.json(user);
   } catch (err) {
+    console.error(err); // Log the error for debugging
     res.status(500).send("Server Error");
   }
 });
 
-userController.delete("/deleteUser/:id", async (req, res) => {
+// Delete a user by ID
+router.delete("/deleteUser/:id", async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
 
@@ -67,5 +89,4 @@ userController.delete("/deleteUser/:id", async (req, res) => {
   }
 });
 
-
-module.exports = userController;
+module.exports = router;

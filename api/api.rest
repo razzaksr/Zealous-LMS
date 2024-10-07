@@ -1,4 +1,9 @@
+### admin controller apis
+
+GET http
+
 ### user apis
+
 GET http://localhost:5000/users/getAllUsers
 
 ###
