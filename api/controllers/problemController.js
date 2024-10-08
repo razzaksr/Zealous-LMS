@@ -60,7 +60,7 @@ router.post('/addProblem', async (req, res) => {
     // Respond with the saved problem
     res.status(201).json(problem);
   } catch (err) {
-    console.error(err);
+    // console.error(err);
     res.status(500).json({ msg: 'Server Error' });
   }
 });
