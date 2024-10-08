@@ -1,5 +1,6 @@
 const express = require('express');
 const Problem = require('../models/Problems');
+const mongoose = require('mongoose');
 
 const router = express.Router();
 
@@ -13,17 +14,34 @@ router.get('/getAllProblems', async (req, res) => {
   }
 });
 
-// POST a new problem
-router.post('/addProblem', async (req, res) => {
-  const { problem_id, title, description, difficulty, input_format, output_format, sample_input, constraints, time_limit, memory_limit, created_by } = req.body;
 
-  if (!problem_id || !title || !description || !difficulty) {
-    return res.status(400).json({ msg: 'Problem ID, title, description, and difficulty are required' });
+router.post('/addProblem', async (req, res) => {
+  const {
+    title,
+    description,
+    difficulty,
+    input_format,
+    output_format,
+    sample_input,
+    constraints,
+    time_limit,
+    memory_limit,
+    created_by
+  } = req.body;
+
+  // Validate required fields
+  if (!title || !description || !difficulty) {
+    return res.status(400).json({ msg: 'Title, description, and difficulty are required' });
+  }
+
+  // Validate created_by as a valid MongoDB ObjectId
+  if (!created_by || !mongoose.Types.ObjectId.isValid(created_by)) {
+    return res.status(400).json({ msg: 'A valid created_by ObjectId is required' });
   }
 
   try {
+    // Create a new problem instance
     const newProblem = new Problem({
-      problem_id,
       title,
       description,
       difficulty,
@@ -33,15 +51,20 @@ router.post('/addProblem', async (req, res) => {
       constraints,
       time_limit,
       memory_limit,
-      created_by,
+      created_by: new mongoose.Types.ObjectId(created_by) // Use 'new' for ObjectId instantiation
     });
 
+    // Save the problem to the database
     const problem = await newProblem.save();
+
+    // Respond with the saved problem
     res.status(201).json(problem);
   } catch (err) {
-    res.status(500).send('Server Error');
+    console.error(err);
+    res.status(500).json({ msg: 'Server Error' });
   }
 });
+
 
 // PUT (update) a problem
 router.put('/updateProblem/:id', async (req, res) => {

@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
 const UserTestResultSchema = new mongoose.Schema({
-    result_id: {
-      type: Number,               // Integer type for result_id
-      required: true,
-      unique: true,               // Ensure result_id is unique
-    },
     user_id: {
       type: mongoose.Schema.Types.ObjectId, // Reference to User
       ref: 'User',

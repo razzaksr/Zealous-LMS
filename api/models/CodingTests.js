@@ -1,14 +1,11 @@
 const mongoose = require('mongoose');
 
+// Define the schema for coding tests
 const CodingTestSchema = new mongoose.Schema({
-    test_id: {
-        type: Number, // Corresponding to 'test_id' integer in the table
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId, // Change admin_id to ObjectId
         required: true,
-        unique: true // Assuming test_id is unique
-    },
-    admin_id: {
-        type: Number, // Corresponding to 'admin_id' integer in the table
-        required: true,
+        ref: 'Admin' // Reference to an Admin model (assuming it exists)
     },
     coding_title: {
         type: String, // Corresponding to 'coding_title' varchar in the table

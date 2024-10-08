@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 
 const TestcaseSchema = new mongoose.Schema(
     {
-      testcase_id: {
-        type: Number,              // Integer type for testcase_id
-        required: true,
-        unique: true,              // Ensure testcase_id is unique
-      },
       problem_id: {
         type: mongoose.Schema.Types.ObjectId, // Reference to Problem
         ref: 'Problem',
@@ -14,11 +9,11 @@ const TestcaseSchema = new mongoose.Schema(
       },
       input: {
         type: String,              // Use String for input
-        required: true,            // Mark as required if necessary
+        required: true,            // Mark as required
       },
       expected_output: {
         type: String,              // Use String for expected_output
-        required: true,            // Mark as required if necessary
+        required: true,            // Mark as required
       },
       is_public: {
         type: Boolean,

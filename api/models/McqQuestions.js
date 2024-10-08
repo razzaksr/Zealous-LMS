@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
 const McqQuestionSchema = new mongoose.Schema({
-  question_id: {
-    type: Number,      // Integer type for question_id
-    unique: true,      // Ensure that question_id is unique
-    required: true,    // Required field
-  },
   test_id: {
-    type: Number,      // Changed from ObjectId to Number to match SQL integer type
+    type: mongoose.Schema.Types.ObjectId, // Change test_id to ObjectId
     required: true,
+    ref: 'McqTest' // Reference to the McqTest model (assuming it exists)
   },
   question_text: {
     type: String,      // Text type for question_text

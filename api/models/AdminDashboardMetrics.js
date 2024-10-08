@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const AdminDashboardMetricsSchema = new mongoose.Schema(
   {
-    admin_id: {
+    user_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Admin", // Reference to the Admin model
       required: true,
