@@ -12,23 +12,26 @@ POST http://localhost:5000/users/addUser
 Content-Type: application/json
 
 {
-  "username": "JohnDoe",
-  "email": "john.doe@example.com",
-  "password_hash": "hashed_password_here"
+  "username": "Vijay123",
+  "email": "vijayaprakash885@gmail.com",
+  "password": "Vijay@123",
+  "role": "admin",
+  "created_at": "2024-10-07T10:30:00Z",
+  "updated_at": "2024-10-07T10:30:00Z"
 }
 
 ###
 
-PUT http://localhost:5000/users/updateUser/6702a2744168859b6763a483
+PUT http://localhost:5000/users/updateUser/6703b9aab42a232a9226e82d
 Content-Type: application/json
 
 {
-  "username": "Jane"
+  "username": "Vijay1234"
 }
 
 ###
 
-DELETE http://localhost:5000/users/deleteUser/6702a2744168859b6763a483
+DELETE http://localhost:5000/users/deleteUser/67037dc49e4560fd9dc32e1b
 
 ################################################
 
@@ -36,28 +39,27 @@ DELETE http://localhost:5000/users/deleteUser/6702a2744168859b6763a483
 
 GET http://localhost:5000/problems/getAllProblems
 
-###
+####
 
 POST http://localhost:5000/problems/addProblem
 Content-Type: application/json
 
 {
-  "problem_id": 1,
-  "title": "Sample Problem",
-  "description": "This is a sample problem description.",
-  "difficulty": "easy",
-  "input_format": "integer",
-  "output_format": "integer",
-  "sample_input": "5",
-  "constraints": "1 <= N <= 1000",
-  "time_limit": 2,
-  "memory_limit": 128,
-  "created_by": 1
+    "title": "Sample  2",
+    "description": "This is a sample problem description.",
+    "difficulty": "medium",
+    "input_format": "Input format goes here",
+    "output_format": "Output format goes here",
+    "sample_input": "Sample input goes here",
+    "constraints": "Constraints go here",
+    "time_limit": 2,
+    "memory_limit": 256,
+    "created_by": "6703b9aab42a232a9226e82d"
 }
 
-###
+#####
 
-PUT http://localhost:5000/problems/updateProblem/6702b5b151bf0de36c24b15e
+PUT http://localhost:5000/problems/updateProblem/6704b6f34c9f4ebc5af72dcd
 Content-Type: application/json
 
 {
@@ -66,6 +68,323 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5000/problems/deleteProblem/6702b5b151bf0de36c24b15e
+DELETE http://localhost:5000/problems/deleteProblem/6704b6f34c9f4ebc5af72dcd
 
 ################################################
+### Admin Dashboard Metrics
+POST http://localhost:5000/adminMetrics/addMetric
+Content-Type: application/json
+
+{
+  "user_id": "6703b9aab42a232a9226e82d",  
+  "total_mcq_tests": 200,
+  "total_coding_tests": 301,
+  "average_score_mcq": 75.5,
+  "average_score_coding": 82.3
+}
+
+
+### Read All Metrics
+GET http://localhost:5000/adminMetrics/getAllMetrics
+
+### Read Metric by ID
+GET http://localhost:5000/adminMetrics/getMetricById/6704b8c33d43cce36f105252
+
+
+#### Update Metric by ID
+PUT http://localhost:5000/adminMetrics/updateMetric/6704b8c33d43cce36f105252
+Content-Type: application/json
+
+{
+  "total_users":10
+}
+
+#### Delete Metric by ID
+DELETE http://localhost:5000/adminMetrics/deleteMetric/6703bb48b42a232a9226e83f
+
+
+#######################################################################
+### CREATE Coding Test
+POST http://localhost:5000/codingTests/addCodingTest
+Content-Type: application/json
+
+{
+    "user_id": "6703b9aab42a232a9226e82d",
+    "coding_title": "Sample Coding Test",
+    "description": "This is a description of the coding test.",
+    "testcase_id": 101
+}
+
+### READ All Coding Tests
+GET http://localhost:5000/codingTests/getAllCodingTests
+
+### READ Coding Test by ID
+GET http://localhost:5000/codingTests/getCodingTestById/6704b8680fe7d132407cef49
+
+### UPDATE Coding Test
+PUT http://localhost:5000/codingTests/updateCodingTest/6704b8680fe7d132407cef49
+Content-Type: application/json
+
+{
+    "coding_title": "Updated Coding Test Title",
+    "description": "Updated description for the coding test.",
+    "testcase_id": 102
+}
+
+### DELETE Coding Test
+DELETE http://localhost:5000/codingTests/deleteCodingTest/6704b8680fe7d132407cef49
+
+### CREATE Language
+POST http://localhost:5000/languages/addLanguage
+Content-Type: application/json
+
+{
+  "language_name": "Python",
+  "compiler_version": "V3"
+}
+
+### READ All Languages
+GET http://localhost:5000/languages/getAllLanguage
+
+### READ Language by ID
+GET http://localhost:5000/languages/getAllLanguage/6704ba464478bec1b2badaa1
+
+### UPDATE Language
+PUT http://localhost:5000/languages/updateLanguage/6704ba464478bec1b2badaa1
+Content-Type: application/json
+
+{
+  "language_name": "Python",
+  "compiler_version": "3.10"
+}
+
+### DELETE Language
+DELETE http://localhost:5000/languages/deleteLanguage/6704ba464478bec1b2badaa1
+
+
+### Leaderboards Routes
+
+#### Create a Leaderboard Entry
+POST http://localhost:5000/leaderboards/addLeaderBoard
+Content-Type: application/json
+
+{
+  "leaderboard_id": 2,
+  "user_id": 1001,
+  "total_problems_solved": 50,
+  "total_submissions": 200,
+  "rating": 1500
+}
+
+#### Get All Leaderboard Entries
+GET http://localhost:5000/leaderboards/getAllLeaderboards
+
+#### Get Leaderboard Entry by ID
+GET http://localhost:5000/leaderboards/getAllLeaderboards/6703e39c0ccac2099e69db91
+
+#### Update Leaderboard Entry
+PUT http://localhost:5000/leaderboards/updateLeaderboard/6703e39c0ccac2099e69db91
+Content-Type: application/json
+
+{
+  "total_problems_solved": 75,
+  "total_submissions": 250,
+  "rating": 1600
+}
+
+#### Delete Leaderboard Entry
+DELETE http://localhost:5000/leaderboards/deleteLeaderboard/6703e39c0ccac2099e69db91
+
+### MCQ Questions Routes
+
+#### Create a MCQ Question
+POST http://localhost:5000/mcqQuestions/addMcqQuestion
+Content-Type: application/json
+
+{
+  "test_id": "6704baf25edd518ff861102c",
+  "question_text": "What is the capital of France?",
+  "option_a": "Berlin",
+  "option_b": "Madrid",
+  "option_c": "Paris",
+  "option_d": "Lisbon",
+  "correct_option": "option_c"
+}
+
+#### Get All MCQ Questions
+GET http://localhost:5000/mcqQuestions/getAllMcqQuestions
+
+#### Get MCQ Question by ID
+GET http://localhost:5000/mcqQuestions/getAllMcqQuestions/6703e4966d6e0e507df7ccad
+
+#### Update MCQ Question
+PUT http://localhost:5000/mcqQuestions/updateMcqQuestion/6703e4966d6e0e507df7ccad
+Content-Type: application/json
+
+{
+  "question_text": "What is the capital of Germany?",
+  "option_a": "Berlin",
+  "option_b": "Munich",
+  "option_c": "Frankfurt",
+  "option_d": "Cologne",
+  "correct_option": "option_a"
+}
+
+#### Delete MCQ Question
+DELETE http://localhost:5000/mcqQuestions/deleteMcqQuestion/6703e4966d6e0e507df7ccad
+
+### MCQ Tests Routes
+
+#### Create a MCQ Test
+POST http://localhost:5000/mcqTest/addMcqTest
+Content-Type: application/json
+
+{
+  "title": "Python Basic",
+  "description": "A test covering the basics of Java.",
+  "created_by": "670404ff45b311a5dc5589e6"
+}
+
+#### Get All MCQ Tests
+GET http://localhost:5000/mcqTest/getAllMcqTests
+
+#### Get MCQ Test by ID
+GET http://localhost:5000/mcqTest/getMcqTestById/6704bb165edd518ff8611030
+
+#### Update MCQ Test
+PUT http://localhost:5000/mcqTest/updateMcqTest/6704bb165edd518ff8611030
+Content-Type: application/json
+
+{
+  "title": "Advanced JavaScript",
+  "description": "A test covering advanced topics in JavaScript."
+}
+
+#### Delete MCQ Test
+DELETE http://localhost:5000/mcqTest/deleteMcqTest/6704bb165edd518ff8611030
+
+
+### Create a new submission
+POST http://localhost:5000/submissions/addSubmission
+Content-Type: application/json
+
+{
+    "user_id": "6703b9aab42a232a9226e82d",
+    "problem_id": "67037dda9e4560fd9dc32e20",
+    "code": "print('Hello World')",
+    "language_id": "6703e1772f1b7a1e33ba7bbb",
+    "submission_date": "2024-10-07T00:00:00Z",
+    "status": "Pending",
+    "execution_time": 100,
+    "memory_usage": 256,
+    "testcases_passed": 5,
+    "total_testcases": 10
+}
+
+
+### Get all submissions
+GET http://localhost:5000/submissions/getAllSubmission
+
+### Get a submission by ID
+GET http://localhost:5000/submissions/getSubmissionById/6704c9ed8e9e6bca1ba3267f 
+
+### Update a submission
+PUT http://localhost:5000/submissions/updateSubmission/6704c9ed8e9e6bca1ba3267f
+
+{
+    "language_id": "6703e1772f1b7a1e33ba7bbb",
+    "submission_date": "2024-10-07T00:00:00Z",
+    "status": "Pending",
+    "execution_time": 200,
+    "memory_usage": 256,
+    "testcases_passed": 5,
+    "total_testcases": 10
+}
+
+### Delete a submission
+DELETE http://localhost:5000/submissions/deleteSubmission/6704c9ed8e9e6bca1ba3267f
+
+#### Tags API
+
+## Create Tag
+
+POST http://localhost:5000/tags/addTags
+Content-Type: application/json
+
+{
+    "tag_name": "Brute"
+}
+
+### Get All Tags
+GET http://localhost:5000/tags/getAllTags
+
+### Get Tag by ID
+GET http://localhost:5000/tags/getTagsById/6703ed74a417a0189e6dded1
+
+---
+
+### Update Tag
+PUT http://localhost:5000/tags/updateTags/6703ed74a417a0189e6dded1
+Content-Type: application/json
+
+{
+    "tag_name":"Updated Tag Name"
+}
+
+### Delete Tag
+DELETE http://localhost:5000/tags/deleteTags/6703ed74a417a0189e6dded1
+
+### Create a Testcase
+POST http://localhost:5000/testcases/addTestcase
+Content-Type: application/json
+
+{                              
+    "problem_id": "67037dda9e4560fd9dc32e20",     
+    "input": "Sample ",            
+    "expected_output": "Expected output from the test", 
+    "is_public": true                               
+}
+### Read All Testcases
+GET http://localhost:5000/testcases/getAllTestcases
+
+### Read Testcase by ID
+GET http://localhost:5000/testcases/getTestcaseByID/6704ccb53b38f9d0071d05ac 
+
+### Update a Testcase
+PUT http://localhost:5000/testcases/updateTestcase/6704ccb53b38f9d0071d05ac
+
+{
+    "input": "Updated input for testing",            
+    "expected_output": "Updated expected output",    
+    "is_public": false                                
+}
+
+### Delete a Testcase
+DELETE http://localhost:5000/testcases/deleteTestcase/6704ccb53b38f9d0071d05ac
+
+### Create User Test Result
+POST http://localhost:5000/userTestResults/addUserTestResults
+Content-Type: application/json
+
+{
+    "user_id": "6703b9aab42a232a9226e82d",
+    "test_id": "6703e5624039f028e0552adb",
+    "score": 85.5
+}
+
+### Read All User Test Results
+GET http://localhost:5000/userTestResults/getAllUserTestResults
+
+### Read User Test Result by ID
+GET http://localhost:5000/userTestResults/getUserTestResultById/670401a1503adba19f78c92f
+
+#### Update User Test Result
+PUT http://localhost:5000/userTestResults/updateUserTestResult/670401a1503adba19f78c92f
+Content-Type: application/json
+
+{
+    "score": 90.0
+}
+
+#### Delete User Test Result
+DELETE http://localhost:5000/userTestResults/deleteUserTestResult/670401a1503adba19f78c92f
