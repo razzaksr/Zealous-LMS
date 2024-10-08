@@ -81,7 +81,6 @@ router.post("/addUser", async (req, res) => {
     const user = await newUser.save();
     res.status(201).json(user);
   } catch (err) {
-    console.error(err); // Log the error for debugging
     res.status(500).json({ msg: "Server Error" });
   }
 });
@@ -97,12 +96,10 @@ router.put("/updateUser/:id", async (req, res) => {
       return res.status(404).json({ msg: "User not found" });
     }
 
-    // Update fields if provided
     user.username = username || user.username;
     user.email = email || user.email;
     user.role = role || user.role;
 
-    // Hash the new password if it is provided
     if (password) {
       const salt = await bcrypt.genSalt(10);
       user.password_hash = await bcrypt.hash(password, salt);
@@ -111,7 +108,6 @@ router.put("/updateUser/:id", async (req, res) => {
     await user.save();
     res.json(user);
   } catch (err) {
-    console.error(err); // Log the error for debugging
     res.status(500).send("Server Error");
   }
 });
