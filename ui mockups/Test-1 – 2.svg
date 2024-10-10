@@ -1,0 +1,379 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-path">
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="39" cy="38.5" rx="39" ry="38.5" transform="translate(-0.186)"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Path_3" data-name="Path 3" d="M23.361,96.544l21.617,5.966a9.411,9.411,0,0,1,5.5,5.114v7.593H-27v-7.593a9.2,9.2,0,0,1,5.5-5.114L.118,96.544V85H23.361Z" transform="translate(27 -85)"/>
+    </clipPath>
+    <clipPath id="clip-path-6">
+      <rect id="Rectangle_12" data-name="Rectangle 12" width="24" height="4" transform="translate(0.471 0.234)"/>
+    </clipPath>
+    <filter id="Rectangle_96" x="64" y="196" width="1781" height="221" filterUnits="userSpaceOnUse">
+      <feOffset dx="10" dy="25" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#ffc2c2" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.981" y1="0.973" x2="-0.33" y2="0.064" gradientUnits="objectBoundingBox">
+      <stop offset="0"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <clipPath id="clip-path-8">
+      <ellipse id="Ellipse_2-2" data-name="Ellipse 2" cx="25" cy="24.5" rx="25" ry="24.5" transform="translate(0.09 0.103)"/>
+    </clipPath>
+    <clipPath id="clip-path-10">
+      <path id="Path_3-2" data-name="Path 3" d="M5.115,92.362l13.785,3.8a6,6,0,0,1,3.508,3.261v4.842H-27V99.427a5.866,5.866,0,0,1,3.508-3.261l13.785-3.8V85H5.115Z" transform="translate(27 -85)"/>
+    </clipPath>
+    <clipPath id="clip-path-13">
+      <rect id="Rectangle_12-2" data-name="Rectangle 12" width="15" height="3" transform="translate(-0.129 -0.304)"/>
+    </clipPath>
+    <clipPath id="clip-Test-1_2">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Test-1_2" data-name="Test-1 – 2" clip-path="url(#clip-Test-1_2)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <g id="Rectangle_11" data-name="Rectangle 11" transform="translate(0 1)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="1920" height="114" stroke="none"/>
+      <rect x="0.5" y="0.5" width="1919" height="113" fill="none"/>
+    </g>
+    <g id="Group_18" data-name="Group 18" transform="translate(-7)">
+      <g id="Group_12" data-name="Group 12" transform="translate(1765.186 24)">
+        <g id="Group_11" data-name="Group 11" transform="translate(0)">
+          <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="39" cy="38.5" rx="39" ry="38.5" transform="translate(-0.186)" fill="#f5eee5"/>
+          <g id="Group_7" data-name="Group 7">
+            <g id="Group_2" data-name="Group 2" clip-path="url(#clip-path)">
+              <path id="Path_1" data-name="Path 1" d="M23.361,96.544l21.617,5.966a9.411,9.411,0,0,1,5.5,5.114v7.593H-27v-7.593a9.2,9.2,0,0,1,5.5-5.114L.118,96.544V85H23.361Z" transform="translate(27 -37.738)" fill="#e6c19c"/>
+            </g>
+            <g id="Group_6" data-name="Group 6" clip-path="url(#clip-path)">
+              <g id="Group_3" data-name="Group 3" transform="translate(0 47.262)" clip-path="url(#clip-path-3)">
+                <path id="Path_2" data-name="Path 2" d="M-27,82H50.479v32.541H-27Zm38.74,23.244c8.523,0,15.5-4.881,15.5-10.847S20.262,83.55,11.74,83.55s-15.5,4.881-15.5,10.847S3.217,105.244,11.74,105.244Z" transform="translate(27 -84.324)" fill="#e6a422"/>
+              </g>
+              <g id="Group_4" data-name="Group 4" transform="translate(0 47.262)" clip-path="url(#clip-path-3)">
+                <path id="Path_4" data-name="Path 4" d="M17.978,84.681a10.911,10.911,0,0,1-4.184-.852,64.265,64.265,0,0,1-7.9-6.431c-2.169-2.324-3.254-5.269-3.564-10.3S.7,44.082.7,39.976C.7,34.165,5.116,25.1,17.823,25.1h.155C30.762,25.177,35.1,34.165,35.1,39.976c0,4.106-1.317,22.082-1.627,27.118S32.079,75,29.91,77.4a49.744,49.744,0,0,1-7.9,6.431,9.6,9.6,0,0,1-4.029.852Z" transform="translate(20.762 -71.51)" fill="#d4b08c"/>
+              </g>
+              <g id="Group_5" data-name="Group 5" transform="translate(0 47.262)" clip-path="url(#clip-path-3)">
+                <path id="Path_6" data-name="Path 6" d="M17.82,82C7.98,82,0,87.733,0,94.784s7.98,12.784,17.82,12.784,17.82-5.733,17.82-12.784S27.66,82,17.82,82Zm0,22.469C9.685,104.469,3.1,99.82,3.1,94.009S9.685,83.55,17.82,83.55,32.541,88.2,32.541,94.009,25.956,104.469,17.82,104.469Z" transform="translate(20.919 -84.324)" fill="#d98c21"/>
+              </g>
+            </g>
+          </g>
+          <path id="Path_8" data-name="Path 8" d="M18.5,84.938a9.92,9.92,0,0,1-3.719-.7,48.512,48.512,0,0,1-7.051-4.881c-1.937-1.782-2.944-3.951-3.254-7.748S3,54.334,3,51.234C3,46.818,6.951,40,18.5,40h0c11.544,0,15.5,6.818,15.5,11.234,0,3.1-1.162,16.658-1.472,20.455s-1.24,5.966-3.254,7.748a53.106,53.106,0,0,1-7.051,4.881,11.7,11.7,0,0,1-3.719.62Z" transform="translate(20.244 -27.603)" fill="#f2cea5"/>
+          <path id="Path_9" data-name="Path 9" d="M26.892,85.072a7.039,7.039,0,0,1-6.276,1.86A5.87,5.87,0,0,1,16.2,83.6Z" transform="translate(17.271 -37.422)" fill="#a3705f"/>
+          <path id="Path_10" data-name="Path 10" d="M26.892,85.072a7.039,7.039,0,0,1-6.276,1.86A5.87,5.87,0,0,1,16.2,83.6Z" transform="translate(17.271 -37.422)" fill="none" stroke="#a3705f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <g id="Group_10" data-name="Group 10" transform="translate(26.343 31.766)">
+            <g id="Group_8" data-name="Group 8" transform="translate(0)" clip-path="url(#clip-path-6)">
+              <circle id="Ellipse_4" data-name="Ellipse 4" cx="1.5" cy="1.5" r="1.5" transform="translate(17.471 1.234)" fill="#291f21"/>
+            </g>
+            <g id="Group_9" data-name="Group 9" transform="translate(0)" clip-path="url(#clip-path-6)">
+              <ellipse id="Ellipse_5" data-name="Ellipse 5" cx="2" cy="1.5" rx="2" ry="1.5" transform="translate(3.471 1.234)" fill="#291f21"/>
+            </g>
+          </g>
+          <path id="Path_11" data-name="Path 11" d="M8,65.324S8.852,63,12.726,63a5.647,5.647,0,0,1,4.959,2.324" transform="translate(19.118 -32.783)" fill="none" stroke="#cc9872" stroke-width="2"/>
+          <path id="Path_12" data-name="Path 12" d="M35.15,65.324S34.3,63,30.424,63C26.7,63,25,65.324,25,66.874v6.973" transform="translate(15.289 -32.783)" fill="none" stroke="#bb8660" stroke-width="2"/>
+          <path id="Path_13" data-name="Path 13" d="M38.643,65.6s.62-4.881,2.867-5.578a46.024,46.024,0,0,0,1.162-7.67A10.934,10.934,0,0,0,41.2,46.077,8.365,8.365,0,0,0,35.312,42.9c-1.782,1.085-5.966,3.564-7.283,5.036-.7.775.31,1.395.31,1.395a11.137,11.137,0,0,1,1.317-.465c1.937-.542,6.2-.93,7.515,1.007C38.8,52.2,38.8,59.016,38.8,60.023,38.8,60.953,38.643,65.6,38.643,65.6Z" transform="translate(14.663 -28.256)" fill="#452228"/>
+          <path id="Path_14" data-name="Path 14" d="M.162,58.064c2.247.775,2.867,5.578,2.867,5.578s-.155-4.649-.155-5.578c0-1.24.155-7.051,2.634-9.84,2.789-3.1,6.508-4.106,8.6-2.712,1.085.7,4.726,4.261,8.6,1.317,2.324-1.782,6.586-5.811,6.586-5.811s-2.247-6.9-12.474-6.121a34.465,34.465,0,0,1-9.143-.7,5.481,5.481,0,0,0,.7,2.944A12.142,12.142,0,0,0-.768,47.217,9.617,9.617,0,0,0-1,49.308v1.085A47.336,47.336,0,0,0,.162,58.064Z" transform="translate(21.145 -26.297)" fill="#6b363e"/>
+        </g>
+      </g>
+      <text id="DK" transform="translate(1854 72)" fill="#eb875c" font-size="34" font-family="Sitka Display" font-weight="700" font-style="italic"><tspan x="0" y="0">DK</tspan></text>
+    </g>
+    <g id="Group_14" data-name="Group 14" transform="translate(1603.612 11)">
+      <path id="Path_15" data-name="Path 15" d="M89.722,63.15a2.237,2.237,0,0,0-.832-.838l-2.5-1.464A6.516,6.516,0,0,1,84.042,58.5a6.309,6.309,0,0,1-.856-3.169V42.142a17.414,17.414,0,0,0-3.631-10.611,18.186,18.186,0,0,0-9.433-6.374.785.785,0,0,1-.409-.272.752.752,0,0,1-.16-.457A4.371,4.371,0,0,0,68.222,21.3a4.629,4.629,0,0,0-6.426,0,4.371,4.371,0,0,0-1.331,3.131.753.753,0,0,1-.161.456.787.787,0,0,1-.409.272,18.186,18.186,0,0,0-9.433,6.374A17.414,17.414,0,0,0,46.83,42.142V55.33a6.309,6.309,0,0,1-.856,3.169,6.517,6.517,0,0,1-2.346,2.348l-2.5,1.464a2.269,2.269,0,0,0-.957,1.088,2.2,2.2,0,0,0-.09,1.43,2.249,2.249,0,0,0,.814,1.193,2.349,2.349,0,0,0,1.388.473H87.728a2.372,2.372,0,0,0,1.131-.316,2.3,2.3,0,0,0,.828-.814,2.217,2.217,0,0,0,.033-2.217Z"/>
+      <path id="Path_16" data-name="Path 16" d="M207.838,459.18a23.391,23.391,0,0,0,7.967,2.315,25.885,25.885,0,0,0,8.57-.475,21.2,21.2,0,0,0,7.377-3.166,13.917,13.917,0,0,0,4.637-5.193h-35.4A15.058,15.058,0,0,0,207.838,459.18Z" transform="translate(-153.686 -381.654)"/>
+    </g>
+    <line id="Line_1" data-name="Line 1" y2="115" transform="translate(1739.5)" fill="none" stroke="#707070" stroke-width="1"/>
+    <line id="Line_2" data-name="Line 2" y2="115" transform="translate(1618.112)" fill="none" stroke="#707070" stroke-width="1"/>
+    <g id="Group_17" data-name="Group 17" transform="translate(-100 5)">
+      <text id="Zealous" transform="translate(252 57)" fill="#eb875c" font-size="45" font-family="Sitka Display" font-weight="700" font-style="italic"><tspan x="0" y="0">Zealous</tspan></text>
+      <text id="Tech-Corp" transform="translate(271 87)" fill="#eb875c" font-size="25" font-family="Sitka Display" font-weight="700" font-style="italic"><tspan x="0" y="0">Tech-Corp</tspan></text>
+    </g>
+    <text id="Courses" transform="translate(536 84)" fill="#eb875c" font-size="35" font-family="Sitka Display" font-weight="700" font-style="italic"><tspan x="0" y="0">Courses</tspan></text>
+    <text id="Student" transform="translate(771 84)" fill="#eb875c" font-size="35" font-family="Sitka Display" font-weight="700" font-style="italic"><tspan x="0" y="0">Student</tspan></text>
+    <text id="Problems" transform="translate(995 84)" fill="#eb875c" font-size="35" font-family="Sitka Display" font-weight="700" font-style="italic"><tspan x="0" y="0">Problems</tspan></text>
+    <g id="Rectangle_14" data-name="Rectangle 14" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="128" height="115" stroke="none"/>
+      <rect x="0.5" y="0.5" width="127" height="114" fill="none"/>
+    </g>
+    <g id="Group_16" data-name="Group 16" transform="translate(-180 -275.535)">
+      <g id="Group_15" data-name="Group 15">
+        <line id="Line_3" data-name="Line 3" x2="55.693" transform="translate(215.307 328.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="6"/>
+        <line id="Line_4" data-name="Line 4" x2="55.693" transform="translate(215.307 343.535)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="6"/>
+        <line id="Line_5" data-name="Line 5" x2="55.693" transform="translate(214.5 358.57)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="6"/>
+      </g>
+    </g>
+    <g id="Polygon_1" data-name="Polygon 1" transform="translate(690 90) rotate(180)" fill="#200202">
+      <path d="M 31.76613807678223 15.5 L 1.233862161636353 15.5 L 16.5 0.6964724063873291 L 31.76613807678223 15.5 Z" stroke="none"/>
+      <path d="M 16.5 1.39295482635498 L 2.467735290527344 15 L 30.53226470947266 15 L 16.5 1.39295482635498 M 16.5 0 L 33 16 L 0 16 L 16.5 0 Z" stroke="none" fill="#707070"/>
+    </g>
+    <g id="Polygon_2" data-name="Polygon 2" transform="translate(927 90) rotate(180)" fill="#200202">
+      <path d="M 31.76613807678223 15.5 L 1.233862161636353 15.5 L 16.5 0.6964724063873291 L 31.76613807678223 15.5 Z" stroke="none"/>
+      <path d="M 16.5 1.39295482635498 L 2.467735290527344 15 L 30.53226470947266 15 L 16.5 1.39295482635498 M 16.5 0 L 33 16 L 0 16 L 16.5 0 Z" stroke="none" fill="#707070"/>
+    </g>
+    <g id="Polygon_5" data-name="Polygon 5" transform="translate(690 90) rotate(180)" fill="#200202">
+      <path d="M 31.76613807678223 15.5 L 1.233862161636353 15.5 L 16.5 0.6964724063873291 L 31.76613807678223 15.5 Z" stroke="none"/>
+      <path d="M 16.5 1.39295482635498 L 2.467735290527344 15 L 30.53226470947266 15 L 16.5 1.39295482635498 M 16.5 0 L 33 16 L 0 16 L 16.5 0 Z" stroke="none" fill="#707070"/>
+    </g>
+    <g id="Polygon_6" data-name="Polygon 6" transform="translate(690 90) rotate(180)" fill="#200202">
+      <path d="M 31.76613807678223 15.5 L 1.233862161636353 15.5 L 16.5 0.6964724063873291 L 31.76613807678223 15.5 Z" stroke="none"/>
+      <path d="M 16.5 1.39295482635498 L 2.467735290527344 15 L 30.53226470947266 15 L 16.5 1.39295482635498 M 16.5 0 L 33 16 L 0 16 L 16.5 0 Z" stroke="none" fill="#707070"/>
+    </g>
+    <g id="Group_160" data-name="Group 160">
+      <g id="Group_159" data-name="Group 159" transform="translate(1802 148)">
+        <path id="Path_441" data-name="Path 441" d="M0,0H48V48H0Z" fill="none"/>
+        <path id="Path_442" data-name="Path 442" d="M24,4A20,20,0,1,0,44,24,19.994,19.994,0,0,0,24,4Zm2,34H22V34h4Zm4.13-15.49-1.79,1.84A6.761,6.761,0,0,0,26,30H22V29a8.014,8.014,0,0,1,2.34-5.66l2.49-2.52A4,4,0,1,0,20,18H16a8,8,0,0,1,16,0,6.348,6.348,0,0,1-1.87,4.51Z"/>
+      </g>
+      <text id="Help" transform="translate(1710 186)" font-size="40" font-family="TimesNewRomanPS-BoldMT, Times New Roman" font-weight="700"><tspan x="0" y="0">Help</tspan></text>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rectangle_96)">
+      <g id="Rectangle_96-2" data-name="Rectangle 96" transform="translate(64 196)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="1762" height="187" stroke="none"/>
+        <rect x="0.5" y="0.5" width="1761" height="186" fill="none"/>
+      </g>
+    </g>
+    <text id="Test_Number_:_1" data-name="Test Number : 1" transform="translate(84 247)" font-size="40" font-family="TimesNewRomanPS-BoldMT, Times New Roman" font-weight="700"><tspan x="0" y="0">Test Number : 1</tspan></text>
+    <text id="Arrays_and_String" data-name="Arrays and String" transform="translate(97 283)" font-size="30" font-family="TimesNewRomanPS-ItalicMT, Times New Roman" font-style="italic"><tspan x="0" y="0">Arrays and String</tspan></text>
+    <text id="Assigned_Date:" data-name="Assigned Date:" transform="translate(132 360)" font-size="30" font-family="TimesNewRomanPS-BoldMT, Times New Roman" font-weight="700"><tspan x="0" y="0">Assigned Date:</tspan></text>
+    <text id="Due_Date:" data-name="Due Date:" transform="translate(722 360)" font-size="30" font-family="TimesNewRomanPS-BoldMT, Times New Roman" font-weight="700"><tspan x="0" y="0">Due Date:</tspan></text>
+    <text id="_20.05.2020" data-name="20.05.2020" transform="translate(328 360)" font-size="30" font-family="TimesNewRomanPS-BoldMT, Times New Roman" font-weight="700"><tspan x="0" y="0">20.05.2020</tspan></text>
+    <text id="_27.05.2020" data-name="27.05.2020" transform="translate(855 360)" font-size="30" font-family="TimesNewRomanPS-BoldMT, Times New Roman" font-weight="700"><tspan x="0" y="0">27.05.2020</tspan></text>
+    <path id="Path_443" data-name="Path 443" d="M24.518,3.923H21.576V.736A.736.736,0,0,0,20.84,0H18.388a.736.736,0,0,0-.736.736V3.923H9.807V.736A.736.736,0,0,0,9.072,0H6.62a.736.736,0,0,0-.736.736V3.923H2.942A2.942,2.942,0,0,0,0,6.865V28.441a2.942,2.942,0,0,0,2.942,2.942H24.518a2.942,2.942,0,0,0,2.942-2.942V6.865A2.942,2.942,0,0,0,24.518,3.923ZM24.15,28.441H3.31a.368.368,0,0,1-.368-.368V9.807H24.518V28.073a.368.368,0,0,1-.368.368Zm-3.239-12.3-8.723,8.653a.736.736,0,0,1-1.04,0l-4.6-4.64a.736.736,0,0,1,0-1.04l1.393-1.381a.735.735,0,0,1,1.04,0l2.7,2.725,6.808-6.753a.736.736,0,0,1,1.04,0L20.915,15.1a.736.736,0,0,1,0,1.04Z" transform="translate(96 334.617)" fill="#2f71d4"/>
+    <path id="Path_444" data-name="Path 444" d="M31.629,15a16.615,16.615,0,1,0,11.762,4.866A16.629,16.629,0,0,0,31.629,15Zm0,29.345a12.691,12.691,0,1,1,9-3.717A12.716,12.716,0,0,1,31.629,44.345Zm4.7-14.966-2.739,1.174V23.8a1.956,1.956,0,1,0-3.913,0v9.782a1.921,1.921,0,0,0,.88,1.663,1.815,1.815,0,0,0,1.859.1L37.889,32.9a1.927,1.927,0,1,0-1.565-3.521Z" transform="translate(669.742 319.617)" fill="#4ffe3c"/>
+    <g id="Rectangle_97" data-name="Rectangle 97" transform="translate(287 450)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="274" height="191" stroke="none"/>
+      <rect x="0.5" y="0.5" width="273" height="190" fill="none"/>
+    </g>
+    <g id="Rectangle_98" data-name="Rectangle 98" transform="translate(652 450)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="274" height="191" stroke="none"/>
+      <rect x="0.5" y="0.5" width="273" height="190" fill="none"/>
+    </g>
+    <g id="Rectangle_99" data-name="Rectangle 99" transform="translate(1002 450)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="274" height="191" stroke="none"/>
+      <rect x="0.5" y="0.5" width="273" height="190" fill="none"/>
+    </g>
+    <g id="Rectangle_100" data-name="Rectangle 100" transform="translate(1359 450)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="274" height="191" stroke="none"/>
+      <rect x="0.5" y="0.5" width="273" height="190" fill="none"/>
+    </g>
+    <text id="Total_Points_Earned" data-name="Total Points Earned" transform="translate(305 577)" font-size="30" font-family="MyriadPro-Regular, Myriad Pro"><tspan x="0" y="0">Total Points Earned</tspan></text>
+    <text id="Completed_Programs" data-name="Completed Programs" transform="translate(656 579)" font-size="30" font-family="MyriadPro-Regular, Myriad Pro"><tspan x="0" y="0">Completed Programs</tspan></text>
+    <text id="Remaining_Programs" data-name="Remaining Programs" transform="translate(1009 579)" font-size="30" font-family="MyriadPro-Regular, Myriad Pro"><tspan x="0" y="0">Remaining Programs</tspan></text>
+    <text id="View_Report" data-name="View Report" transform="translate(1420 579)" font-size="30" font-family="MyriadPro-Regular, Myriad Pro"><tspan x="0" y="0">View Report</tspan></text>
+    <g id="Group_162" data-name="Group 162" transform="translate(391.5 488.069)">
+      <g id="Group_161" data-name="Group 161">
+        <path id="Path_445" data-name="Path 445" d="M62.414,17.191,52.926,10a2.581,2.581,0,0,0-.715-.542L45.818,4.585A2.774,2.774,0,0,0,44.169,4H19.833a2.77,2.77,0,0,0-1.651.586L1.584,17.175a2.751,2.751,0,0,0-.525,3.85L29.825,58.85a2.731,2.731,0,0,0,4.351,0l28.766-37.82A2.739,2.739,0,0,0,62.414,17.191ZM20.75,10h22.5l3.1,2.117-4.01,2.855L22.754,14.76l-4.947-2.731ZM7.071,19.9,13.1,15.338,18.1,18.309l-5.754,8.53ZM32,52.684,17.03,33H46.97ZM18.489,28l4.949-7.577,18.383.267L46.983,28Zm33.974-2.229L47.026,18.2,50.9,15.33l6.031,4.57Z" fill="#edc211"/>
+      </g>
+      <path id="Path_446" data-name="Path 446" d="M62.414,17.191,52.926,10a2.581,2.581,0,0,0-.715-.542L45.818,4.585A2.774,2.774,0,0,0,44.169,4H32v6H43.252l3.1,2.117-3.956,2.855L32,14.86v5.687l9.821.143L46.983,28H32v5H46.97L32,52.684v7.239a2.451,2.451,0,0,0,2.229-1.069L62.967,21.033A2.743,2.743,0,0,0,62.414,17.191Zm-9.951,8.58L47.026,18.2,50.9,15.33l6.031,4.57Z" fill="#e2a60e"/>
+      <path id="Path_447" data-name="Path 447" d="M20.991,5.525,44.169,4H19.833a2.77,2.77,0,0,0-1.651.586L1.584,17.175,19.341,6.087A2.742,2.742,0,0,1,20.991,5.525Z" fill="#f9e130"/>
+    </g>
+    <text id="_100" data-name="100" transform="translate(401 613)" font-size="30" font-family="MyriadPro-Regular, Myriad Pro"><tspan x="0" y="0">100</tspan></text>
+    <text id="_5" data-name="5" transform="translate(753 613)" font-size="30" font-family="MyriadPro-Regular, Myriad Pro"><tspan x="0" y="0">5</tspan></text>
+    <g id="Group_163" data-name="Group 163" transform="translate(707 352.069)">
+      <path id="Path_448" data-name="Path 448" d="M113.767,171.883a31.883,31.883,0,1,0-31.883,31.883,31.881,31.881,0,0,0,31.883-31.883Zm-7.51-12.417L76.241,189.481h0L74.1,191.624,57.51,175.034l7.323-7.323,9.279,9.279,24.834-24.834,7.311,7.311Z" fill="#41ad49"/>
+    </g>
+    <g id="Rectangle_101" data-name="Rectangle 101" transform="translate(1397 540)" fill="none" stroke="#707070" stroke-width="1">
+      <rect width="198" height="62" stroke="none"/>
+      <rect x="0.5" y="0.5" width="197" height="61" fill="none"/>
+    </g>
+    <g id="Group_164" data-name="Group 164" transform="translate(1070.872 451.367)">
+      <path id="Path_449" data-name="Path 449" d="M108.445,45.954,87.993,25.5a1.72,1.72,0,0,0-.262-.215c-.041-.027-.085-.046-.127-.069a1.672,1.672,0,0,0-.166-.087,1.751,1.751,0,0,0-.17-.053c-.049-.015-.1-.033-.148-.044a1.717,1.717,0,0,0-.668,0c-.051.01-.1.029-.148.044a1.626,1.626,0,0,0-.17.053,1.666,1.666,0,0,0-.166.087c-.042.023-.086.042-.127.069a1.713,1.713,0,0,0-.473.473c-.027.04-.045.083-.068.125a.993.993,0,0,0-.141.338,1.512,1.512,0,0,0-.044.148,1.7,1.7,0,0,0-.033.334V47.159a1.7,1.7,0,0,0,1.7,1.7h9.545a1.7,1.7,0,1,0,0-3.409h-7.84V30.82l17.045,17.045V92.06a3.173,3.173,0,0,1-3.175,3.165H59.614a1.7,1.7,0,1,0,0,3.409h42.747a6.586,6.586,0,0,0,6.583-6.574v-44.9A1.7,1.7,0,0,0,108.445,45.954Z" transform="translate(-10.071 -0.001)" fill="url(#linear-gradient)"/>
+      <path id="Path_450" data-name="Path 450" d="M67.51,26.7a1.7,1.7,0,0,0-1.7-1.7H44.711a6.586,6.586,0,0,0-6.583,6.574V96.929a1.7,1.7,0,1,0,3.409,0V31.574a3.173,3.173,0,0,1,3.175-3.165H65.806A1.7,1.7,0,0,0,67.51,26.7Z" fill="url(#linear-gradient)"/>
+      <path id="Path_451" data-name="Path 451" d="M59.613,70.076H75.877a1.7,1.7,0,0,0,0-3.409H59.613a1.7,1.7,0,1,0,0,3.409Z" transform="translate(-10.071 -21.213)" fill="url(#linear-gradient)"/>
+      <path id="Path_452" data-name="Path 452" d="M96.33,126.389H59.613a1.7,1.7,0,1,0,0,3.409H96.33a1.7,1.7,0,1,0,0-3.409Z" transform="translate(-10.071 -51.618)" fill="url(#linear-gradient)"/>
+      <path id="Path_453" data-name="Path 453" d="M96.33,96.528H59.613a1.7,1.7,0,1,0,0,3.409H96.33a1.7,1.7,0,1,0,0-3.409Z" transform="translate(-10.071 -36.416)" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Path_454" data-name="Path 454" d="M47.813,15.938H35.063V47.813H31.875V0H19.125V47.813H15.938V25.5H3.188V47.813H0V51H51V47.813H47.813Z" transform="translate(1471 483)" fill="#6190d6"/>
+    <g id="Rectangle_102" data-name="Rectangle 102" transform="translate(19 703)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="445" height="193" stroke="none"/>
+      <rect x="0.5" y="0.5" width="444" height="192" fill="none"/>
+    </g>
+    <g id="Rectangle_106" data-name="Rectangle 106" transform="translate(19 923)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="445" height="193" stroke="none"/>
+      <rect x="0.5" y="0.5" width="444" height="192" fill="none"/>
+    </g>
+    <g id="Rectangle_103" data-name="Rectangle 103" transform="translate(945 703)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="445" height="193" stroke="none"/>
+      <rect x="0.5" y="0.5" width="444" height="192" fill="none"/>
+    </g>
+    <g id="Rectangle_107" data-name="Rectangle 107" transform="translate(945 923)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="445" height="193" stroke="none"/>
+      <rect x="0.5" y="0.5" width="444" height="192" fill="none"/>
+    </g>
+    <g id="Path_455" data-name="Path 455" transform="translate(482 703)" fill="#fff">
+      <path d="M 444.5 192.5 L 0.5 192.5 L 0.5 0.5 L 444.5 0.5 L 444.5 192.5 Z" stroke="none"/>
+      <path d="M 1 1 L 1 192 L 444 192 L 444 1 L 1 1 M 0 0 L 445 0 L 445 193 L 0 193 L 0 0 Z" stroke="none" fill="#707070"/>
+    </g>
+    <g id="Path_456" data-name="Path 456" transform="translate(482 923)" fill="#fff">
+      <path d="M 444.5 192.5 L 0.5 192.5 L 0.5 0.5 L 444.5 0.5 L 444.5 192.5 Z" stroke="none"/>
+      <path d="M 1 1 L 1 192 L 444 192 L 444 1 L 1 1 M 0 0 L 445 0 L 445 193 L 0 193 L 0 0 Z" stroke="none" fill="#707070"/>
+    </g>
+    <g id="Rectangle_104" data-name="Rectangle 104" transform="translate(1408 703)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="445" height="193" stroke="none"/>
+      <rect x="0.5" y="0.5" width="444" height="192" fill="none"/>
+    </g>
+    <g id="Rectangle_108" data-name="Rectangle 108" transform="translate(1408 923)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="445" height="193" stroke="none"/>
+      <rect x="0.5" y="0.5" width="444" height="192" fill="none"/>
+    </g>
+    <g id="Group_166" data-name="Group 166">
+      <text id="Question_1" data-name="Question 1" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 1</tspan></text>
+      <text id="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165" data-name="Group 165">
+        <g id="Rectangle_105" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_170" data-name="Group 170" transform="translate(0 220)">
+      <text id="Question_5" data-name="Question 5" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 5</tspan></text>
+      <text id="Description-2" data-name="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165-2" data-name="Group 165">
+        <g id="Rectangle_105-2" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve-2" data-name="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_167" data-name="Group 167" transform="translate(458)">
+      <text id="Question_2" data-name="Question 2" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 2</tspan></text>
+      <text id="Description-3" data-name="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165-3" data-name="Group 165">
+        <g id="Rectangle_105-3" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve-3" data-name="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_171" data-name="Group 171" transform="translate(458 220)">
+      <text id="Question_6" data-name="Question 6" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 6</tspan></text>
+      <text id="Description-4" data-name="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165-4" data-name="Group 165">
+        <g id="Rectangle_105-4" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve-4" data-name="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_168" data-name="Group 168" transform="translate(910)">
+      <text id="Question_3" data-name="Question 3" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 3</tspan></text>
+      <text id="Description-5" data-name="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165-5" data-name="Group 165">
+        <g id="Rectangle_105-5" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve-5" data-name="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_172" data-name="Group 172" transform="translate(910 220)">
+      <text id="Question_7" data-name="Question 7" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 7</tspan></text>
+      <text id="Description-6" data-name="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165-6" data-name="Group 165">
+        <g id="Rectangle_105-6" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve-6" data-name="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_169" data-name="Group 169" transform="translate(1373)">
+      <text id="Question_4" data-name="Question 4" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 4</tspan></text>
+      <text id="Description-7" data-name="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165-7" data-name="Group 165">
+        <g id="Rectangle_105-7" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve-7" data-name="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_173" data-name="Group 173" transform="translate(1373 220)">
+      <text id="Question_8" data-name="Question 8" transform="translate(50 745)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Question 8</tspan></text>
+      <text id="Description-8" data-name="Description" transform="translate(63 801)" font-size="30" font-family="MyriadPro-Bold, Myriad Pro" font-weight="700"><tspan x="0" y="0">Description</tspan></text>
+      <g id="Group_165-8" data-name="Group 165">
+        <g id="Rectangle_105-8" data-name="Rectangle 105" transform="translate(332 850)" fill="#e1b04f" stroke="#707070" stroke-width="1">
+          <rect width="121" height="37" rx="8" stroke="none"/>
+          <rect x="0.5" y="0.5" width="120" height="36" rx="7.5" fill="none"/>
+        </g>
+        <text id="Solve-8" data-name="Solve" transform="translate(359 879)" fill="#fff" font-size="30" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Solve</tspan></text>
+      </g>
+    </g>
+    <g id="Group_127" data-name="Group 127">
+      <g id="Rectangle_46" data-name="Rectangle 46" transform="translate(1618 108)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="295" height="537" stroke="none"/>
+        <rect x="0.5" y="0.5" width="294" height="536" fill="none"/>
+      </g>
+      <g id="Group_94" data-name="Group 94" transform="translate(-139.089 84.897)">
+        <g id="Group_12-2" data-name="Group 12" transform="translate(1765 30)">
+          <g id="Group_11-2" data-name="Group 11" transform="translate(0)">
+            <ellipse id="Ellipse_1-2" data-name="Ellipse 1" cx="25" cy="24.5" rx="25" ry="24.5" transform="translate(0.09 0.103)" fill="#f5eee5"/>
+            <g id="Group_7-2" data-name="Group 7">
+              <g id="Group_2-2" data-name="Group 2" clip-path="url(#clip-path-8)">
+                <path id="Path_1-2" data-name="Path 1" d="M5.115,92.362l13.785,3.8a6,6,0,0,1,3.508,3.261v4.842H-27V99.427a5.866,5.866,0,0,1,3.508-3.261l13.785-3.8V85H5.115Z" transform="translate(27.119 -54.861)" fill="#e6c19c"/>
+              </g>
+              <g id="Group_6-2" data-name="Group 6" clip-path="url(#clip-path-8)">
+                <g id="Group_3-2" data-name="Group 3" transform="translate(0.119 30.139)" clip-path="url(#clip-path-10)">
+                  <path id="Path_2-2" data-name="Path 2" d="M-27,82H22.408v20.752H-27ZM-2.3,96.823c5.435,0,9.882-3.113,9.882-6.917S3.139,82.988-2.3,82.988s-9.882,3.113-9.882,6.917S-7.731,96.823-2.3,96.823Z" transform="translate(27 -83.482)" fill="#e6a422"/>
+                </g>
+                <g id="Group_4-2" data-name="Group 4" transform="translate(0.119 30.139)" clip-path="url(#clip-path-10)">
+                  <path id="Path_4-2" data-name="Path 4" d="M11.718,63.1a6.958,6.958,0,0,1-2.668-.543,40.982,40.982,0,0,1-5.04-4.1c-1.383-1.482-2.075-3.36-2.273-6.571S.7,37.205.7,34.586C.7,30.881,3.516,25.1,11.619,25.1h.1c8.152.049,10.919,5.781,10.919,9.486,0,2.619-.84,14.081-1.038,17.293s-.889,5.04-2.273,6.571a31.721,31.721,0,0,1-5.04,4.1,6.125,6.125,0,0,1-2.569.543Z" transform="translate(12.986 -54.696)" fill="#d4b08c"/>
+                </g>
+                <g id="Group_5-2" data-name="Group 5" transform="translate(0.119 30.139)" clip-path="url(#clip-path-10)">
+                  <path id="Path_6-2" data-name="Path 6" d="M11.364,82C5.089,82,0,85.656,0,90.152S5.089,98.3,11.364,98.3s11.364-3.656,11.364-8.152S17.639,82,11.364,82Zm0,14.328c-5.188,0-9.388-2.965-9.388-6.67s4.2-6.67,9.388-6.67,9.388,2.965,9.388,6.67S16.552,96.328,11.364,96.328Z" transform="translate(13.34 -83.482)" fill="#d98c21"/>
+                </g>
+              </g>
+            </g>
+            <path id="Path_8-2" data-name="Path 8" d="M12.882,68.657a6.326,6.326,0,0,1-2.372-.445,30.936,30.936,0,0,1-4.5-3.113c-1.235-1.136-1.878-2.52-2.075-4.941S3,49.141,3,47.164C3,44.348,5.52,40,12.882,40h0c7.362,0,9.882,4.348,9.882,7.164,0,1.976-.741,10.623-.939,13.044s-.791,3.8-2.075,4.941a33.866,33.866,0,0,1-4.5,3.113,7.46,7.46,0,0,1-2.372.4Z" transform="translate(11.941 -32.095)" fill="#f2cea5"/>
+            <path id="Path_9-2" data-name="Path 9" d="M23.018,84.539a4.489,4.489,0,0,1-4,1.186A3.743,3.743,0,0,1,16.2,83.6Z" transform="translate(5.263 -54.153)" fill="#a3705f"/>
+            <path id="Path_10-2" data-name="Path 10" d="M23.018,84.539a4.489,4.489,0,0,1-4,1.186A3.743,3.743,0,0,1,16.2,83.6Z" transform="translate(5.263 -54.153)" fill="none" stroke="#a3705f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <g id="Group_10-2" data-name="Group 10" transform="translate(17.218 20.406)">
+              <g id="Group_8-2" data-name="Group 8" transform="translate(0 0)" clip-path="url(#clip-path-13)">
+                <circle id="Ellipse_4-2" data-name="Ellipse 4" cx="1" cy="1" r="1" transform="translate(10.871 0.696)" fill="#291f21"/>
+              </g>
+              <g id="Group_9-2" data-name="Group 9" transform="translate(0 0)" clip-path="url(#clip-path-13)">
+                <ellipse id="Ellipse_5-2" data-name="Ellipse 5" cx="1.5" cy="1" rx="1.5" ry="1" transform="translate(1.871 0.696)" fill="#291f21"/>
+              </g>
+            </g>
+            <path id="Path_11-2" data-name="Path 11" d="M8,64.482S8.543,63,11.014,63a3.6,3.6,0,0,1,3.162,1.482" transform="translate(9.412 -43.731)" fill="none" stroke="#cc9872" stroke-width="2"/>
+            <path id="Path_12-2" data-name="Path 12" d="M31.473,64.482S30.929,63,28.459,63C26.087,63,25,64.482,25,65.47v4.447" transform="translate(0.811 -43.731)" fill="none" stroke="#bb8660" stroke-width="2"/>
+            <path id="Path_13-2" data-name="Path 13" d="M34.708,57.377s.4-3.113,1.828-3.557a29.35,29.35,0,0,0,.741-4.891,6.973,6.973,0,0,0-.939-4A5.334,5.334,0,0,0,32.584,42.9a28.65,28.65,0,0,0-4.644,3.212c-.445.494.2.889.2.889a7.1,7.1,0,0,1,.84-.3c1.235-.346,3.953-.593,4.793.642,1.038,1.482,1.038,5.83,1.038,6.473C34.807,54.412,34.708,57.377,34.708,57.377Z" transform="translate(-0.597 -33.562)" fill="#452228"/>
+            <path id="Path_14-2" data-name="Path 14" d="M-.259,49.418c1.433.494,1.828,3.557,1.828,3.557s-.1-2.965-.1-3.557c0-.791.1-4.5,1.68-6.275,1.779-1.976,4.15-2.619,5.484-1.729.692.445,3.014,2.717,5.484.84,1.482-1.136,4.2-3.706,4.2-3.706s-1.433-4.4-7.955-3.9a21.979,21.979,0,0,1-5.83-.445,3.5,3.5,0,0,0,.445,1.878A7.743,7.743,0,0,0-.852,42.5,6.133,6.133,0,0,0-1,43.835v.692A30.186,30.186,0,0,0-.259,49.418Z" transform="translate(13.965 -29.16)" fill="#6b363e"/>
+          </g>
+        </g>
+        <text id="Username_Mail-id" data-name="Username
+Mail-id" transform="translate(1858.089 55.103)" fill="#131313" font-size="20" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Username</tspan><tspan x="0" y="23">Mail-id</tspan></text>
+      </g>
+      <g id="Group_95" data-name="Group 95">
+        <text id="My_learning" data-name="My learning" transform="translate(1626 203)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">My learning</tspan></text>
+        <text id="My_Cart" data-name="My Cart" transform="translate(1626 240)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">My Cart</tspan></text>
+        <text id="Wishlist" transform="translate(1626 277)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Wishlist</tspan></text>
+        <text id="Instructor_Dashboard" data-name="Instructor Dashboard" transform="translate(1626 314)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Instructor Dashboard</tspan></text>
+        <text id="Rewards_" data-name="Rewards
+" transform="translate(1626 351)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Rewards</tspan><tspan x="0" y="26"></tspan></text>
+      </g>
+      <g id="Group_96" data-name="Group 96" transform="translate(0 217)">
+        <text id="Notifications" transform="translate(1626 203)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Notifications</tspan></text>
+        <text id="Messages" transform="translate(1626 240)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Messages</tspan></text>
+        <text id="Account_Settings" data-name="Account Settings" transform="translate(1626 277)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Account Settings</tspan></text>
+        <text id="Purchase_History" data-name="Purchase History" transform="translate(1626 314)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Purchase History</tspan></text>
+        <text id="Help_and_Support_" data-name="Help and Support
+" transform="translate(1626 351)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Help and Support</tspan><tspan x="0" y="26"></tspan></text>
+      </g>
+      <text id="Logout" transform="translate(1681 617)" fill="#131313" font-size="22" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Logout</tspan></text>
+      <g id="Group_97" data-name="Group 97" transform="translate(1632 594.25)">
+        <path id="Path_143" data-name="Path 143" d="M5.868,32.594H18.906a1.719,1.719,0,0,0,0-3.438H5.868L8.09,26.934A1.719,1.719,0,1,0,5.66,24.5L.5,29.66a1.718,1.718,0,0,0,0,2.43L5.66,37.247a1.719,1.719,0,1,0,2.43-2.43Z" transform="translate(0 -17.125)"/>
+        <path id="Path_144" data-name="Path 144" d="M51.469,0H37.719A1.718,1.718,0,0,0,36,1.719V5.156a1.719,1.719,0,0,0,3.438,0V3.437H49.75V24.062H39.438V22.344a1.719,1.719,0,0,0-3.437,0v3.438A1.718,1.718,0,0,0,37.719,27.5h13.75a1.718,1.718,0,0,0,1.719-1.719V1.719A1.718,1.718,0,0,0,51.469,0Z" transform="translate(-25.687 0)"/>
+      </g>
+      <g id="Group_98" data-name="Group 98" transform="translate(1866 126.988)">
+        <path id="Path_145" data-name="Path 145" d="M21.888,2.012,25.68,5.8,22.79,8.7,19,4.9ZM8,19.692h3.792L21,10.482,17.21,6.69,8,15.9Z" transform="translate(1.32 0)"/>
+        <path id="Path_146" data-name="Path 146" d="M23.223,23.223H9.519c-.033,0-.067.013-.1.013s-.083-.011-.126-.013H5.528V5.528h8.654L16.71,3H5.528A2.53,2.53,0,0,0,3,5.528v17.7a2.53,2.53,0,0,0,2.528,2.528h17.7a2.528,2.528,0,0,0,2.528-2.528V12.267L23.223,14.8Z" transform="translate(0 0.261)"/>
+      </g>
+      <text id="Edit_Profile" data-name="Edit Profile" transform="translate(1863 162)" fill="#131313" font-size="8" font-family="TimesNewRomanPSMT, Times New Roman"><tspan x="0" y="0">Edit Profile</tspan></text>
+    </g>
+  </g>
+</svg>
