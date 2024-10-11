@@ -43,6 +43,41 @@ describe("GET /users/getAllUsers", () => {
     });
 });
 
+describe("GET /users/getUserById/:id", () => {
+    it("should fetch user by id", async () => {
+        User.findById.mockResolvedValue([
+            {
+                _id: "507f1f77bcf86cd799439011",
+                username: "Dharun",
+                email: "dharun@gmail.com",
+                password_hash: "hashpass"
+            },
+        ]);
+        
+        const res = await request(app).get("/users/getUserById/507f1f77bcf86cd799439011");
+        
+        expect(res.statusCode).toBe(200);
+        expect(res.body[0].username).toBe("Dharun");
+        expect(res.body[0].email).toBe("dharun@gmail.com");
+    });
+
+    it("should return 404 if the user is not found", async () => {
+        User.findById.mockResolvedValue(null);
+
+        const res = await request(app).get("/users/getUserById/507f1f77bcf86cd799439011");
+
+        expect(res.statusCode).toBe(404);
+        expect(res.body.msg).toBe("User not found");
+    });
+
+    it("should return 500 in case of any failure", async () => {
+        User.findById.mockRejectedValue(new Error("Database error"));
+        const res = await request(app).get("/users/getUserById/507f1f77bcf86cd79");
+        expect(res.statusCode).toBe(500);
+        expect(res.text).toBe("Server Error");
+    });
+});
+
 describe("POST /users/addUser", () => {
     beforeEach(() => {
         jest.clearAllMocks();
