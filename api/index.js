@@ -15,7 +15,7 @@ const tagController = require('./controllers/tagController');
 const testcaseController = require('./controllers/testcaseController');
 const userController = require("./controllers/userController");
 const userTestResultController = require('./controllers/userTestResultController');
-const userDashboardApi = require('./services/userDashboard');
+const userDashboardApi = require('./controllers/userDashboard');
 
 const app = express();
 const PORT = process.env.PORT;
