@@ -16,6 +16,8 @@ const testcaseController = require('./controllers/testcaseController');
 const userController = require("./controllers/userController");
 const userTestResultController = require('./controllers/userTestResultController');
 
+const userDashboardApi = require('./controllers/userDashboard');
+
 const authController=require('./controllers/authController');
 
 const app = express();
@@ -39,8 +41,6 @@ app.use("/testcases", testcaseController);
 app.use("/users", userController);
 app.use("/userTestResults", userTestResultController);
 app.use("/auth",authController);
-
-// services
 app.use("/userDashboardApi", userDashboardApi);
 
 // Start the server
