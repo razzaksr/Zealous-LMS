@@ -12,8 +12,8 @@ POST http://localhost:5000/users/addUser
 Content-Type: application/json
 
 {
-  "username": "Vijay123",
-  "email": "vijayaprakash885@gmail.com",
+  "username": "Vijay12345",
+  "email": "vijayaprakash1709@gmail.com",
   "password": "Vijay@123",
   "role": "admin",
   "created_at": "2024-10-07T10:30:00Z",
@@ -388,3 +388,77 @@ Content-Type: application/json
 
 #### Delete User Test Result
 DELETE http://localhost:5000/userTestResults/deleteUserTestResult/670401a1503adba19f78c92f
+
+
+### Register a New User
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "email": "newuser@example.com",
+  "password": "newpassword123",
+  "mobile": "9876543210"
+}
+
+### Login User
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "newuser@example.com",
+  "password": "newpassword123"
+}
+
+### Access Dashboard (Authenticated)
+GET http://localhost:5000/dashboard
+Content-Type: application/json
+
+# Assuming you send credentials in the body, but this could be changed depending on your authentication mechanism
+{
+  "email": "newuser@example.com",
+  "password": "newpassword123"
+}
+
+### Logout User (If you have a logout route)
+POST http://localhost:5000/auth/logout
+Content-Type: application/json
+
+{
+  "email": "newuser@example.com"
+}
+
+### Register User
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "email": "johndoe@example.com",
+  "password": "password123",
+  "mobile": "1234567890"
+}
+
+###
+
+### Login User
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "vijayaprakash885@gmail.com",
+  "password_hash": "Vijay@123"
+}
+
+### Login User
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "vijayaprakash1709@gmail.com",
+  "password": "Vijay@123"
+}
+
+### Example of a protected route using the token
+GET http://localhost:5000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg3OTA2NjksImV4cCI6MTcyODc5NDI2OX0.Zqc3i0E1ppC882ehRu7l3UhfzI_qdLBgAZ5IIzBbX10
