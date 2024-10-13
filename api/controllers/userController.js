@@ -13,39 +13,18 @@ router.get("/getAllUsers", async (req, res) => {
   }
 });
 
-// Add a new user with hashed password
-// router.post("/addUser", async (req, res) => {
-//   const { username, email, password, role } = req.body;
-
-//   if (!username) {
-//     return res.status(400).json({ msg: "Name is required" });
-//   }
-
-//   if (!password) {
-//     return res.status(400).json({ msg: "Password is required" });
-//   }
-
-//   try {
-//     // Hash the password before saving to the database
-//     const salt = await bcrypt.genSalt(10);
-//     const password_hash = await bcrypt.hash(password, salt);
-
-//     const newUser = new User({
-//       username,
-//       email,
-//       password_hash,
-//       role,
-//     });
-
-//     const user = await newUser.save();
-//     res.status(201).json(user);
-//   } catch (err) {
-//     res.status(500).send("Server Error");
-//   }
-// });
+router.get("/getUserById/:id", async (req, res) => {
+  try{
+    const users = await User.findById(req.params.id);
+    if(!users) return res.status(404).json({ msg: 'User not found' });
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).send("Server Error");
+  }
+});
 
 router.post("/addUser", async (req, res) => {
-  const { username, email, password, role } = req.body;
+  const { username, email, password, role, status, mcqTestsAssigned, codingTestsAssigned } = req.body;
 
   // Validate required fields
   if (!username) {
@@ -76,6 +55,9 @@ router.post("/addUser", async (req, res) => {
       email,
       password_hash,
       role,
+      status,
+      mcqTestsAssigned,
+      codingTestsAssigned
     });
 
     const user = await newUser.save();

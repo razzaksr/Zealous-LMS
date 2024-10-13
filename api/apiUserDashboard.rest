@@ -1,0 +1,43 @@
+### Signing up a new user
+POST http://localhost:5000/users/addUser
+Content-Type: application/json
+
+{
+    "username": "Noorul",
+    "email": "noorul@gmail.com",
+    "password": "noornoor212",
+    "role": "user",
+    "status": "active",
+    "mcqTestsAssigned": ["6703e5624039f028e0552adb", "6704baf25edd518ff861102c"],
+    "codingTestsAssigned": ["6703bccac801c34498e5649a", "6704b8680fe7d132407cef49"]
+}
+
+### Fetching particular user details who login to the application
+GET http://localhost:5000/users/getUserById/6708c037fdc16bcaed9b5be6
+
+
+
+
+
+
+######################################################################
+###################### Coding Tests ##################################
+######################################################################
+
+###  Fetching codingTestPackages assigned to the logged user
+GET http://localhost:5000/userDashboardApi/getCodingTestsToUsers/6708c037fdc16bcaed9b5be6
+
+### Fetching problems with respect to codingTests
+GET http://localhost:5000/userDashboardApi/getProblemsByCodingTestsId/6703bccac801c34498e5649a
+
+### Fetching testcases with respect to problems
+GET http://localhost:5000/userDashboardApi/getTestcasesByProblemId/6704b62e4c9f4ebc5af72dc9
+
+
+
+######################################################################
+###################### MCQ Tests #####################################
+######################################################################
+
+###  Fetching mcqTestPackages assigned to the logged user
+GET http://localhost:5000/userDashboardApi/getMcqTestsToUsers/6708c037fdc16bcaed9b5be6
