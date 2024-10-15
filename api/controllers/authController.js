@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
         role: user.role
       },
       process.env.JWT_SECRET, // Use the secret key from the .env file
-      { expiresIn: '1h' }  // Token expiration time (1 hour in this case)
+      { expiresIn: '10h' }  // Token expiration time (10 hour in this case)
     );
 
     // Return the JWT token and user information

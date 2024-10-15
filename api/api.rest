@@ -439,17 +439,9 @@ Content-Type: application/json
   "mobile": "1234567890"
 }
 
-###
 
-### Login User
-POST http://localhost:5000/auth/login
-Content-Type: application/json
 
-{
-  "email": "vijayaprakash885@gmail.com",
-  "password_hash": "Vijay@123"
-}
-
+############################################ After JWT Token Implementation ############################################
 ### Login User
 POST http://localhost:5000/auth/login
 Content-Type: application/json
@@ -461,4 +453,73 @@ Content-Type: application/json
 
 ### Example of a protected route using the token
 GET http://localhost:5000/auth/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg3OTA2NjksImV4cCI6MTcyODc5NDI2OX0.Zqc3i0E1ppC882ehRu7l3UhfzI_qdLBgAZ5IIzBbX10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+
+### Get all users (requires JWT)
+GET http://localhost:5000/users/getAllUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+
+###
+
+### Get user by ID (requires JWT)
+GET http://localhost:5000/users/getUserById/670b4086059e40d3946786a3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+
+###
+
+### Check if username exists
+POST http://localhost:5000/users/check-username
+Content-Type: application/json
+
+{
+  "username": "Vijay12345"
+}
+
+###
+
+### Check if email exists
+POST http://localhost:5000/users/check-email
+Content-Type: application/json
+
+{
+  "email": "vijayaprakash885@gmail.com"
+}
+
+###
+
+### Add a new user
+POST http://localhost:5000/users/addUser
+Content-Type: application/json
+
+{
+  "username": "new_user",
+  "email": "new_user@example.com",
+  "password": "password123",
+  "role": "user",
+  "status": "active",
+  "mcqTestsAssigned": ["mcqTest1"],
+  "codingTestsAssigned": ["codingTest1"]
+}
+
+###
+
+### Update user by ID (requires JWT)
+PUT http://localhost:5000/users/updateUser/670ded223fb760097d1959eb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+Content-Type: application/json
+
+{
+  "username": "updated_username",
+  "email": "updated_email@example.com",
+  "password": "new_password",
+  "role": "admin"
+}
+
+###
+
+### Delete user by ID (requires JWT)
+DELETE http://localhost:5000/users/deleteUser/670ded223fb760097d1959eb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+
+###
+

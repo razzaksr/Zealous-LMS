@@ -2,9 +2,12 @@ const User = require("../models/Users");
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+require('dotenv').config(); // or use dotenv for environment variables
+const auth = require("../middleware/authMiddleware"); // assuming this is the path to your auth middleware
 
-// Get all users
-router.get("/getAllUsers", async (req, res) => {
+// Get all users (protected)
+router.get("/getAllUsers", auth, async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
@@ -13,15 +16,60 @@ router.get("/getAllUsers", async (req, res) => {
   }
 });
 
-router.get("/getUserById/:id", async (req, res) => {
-  try{
-    const users = await User.findById(req.params.id);
-    if(!users) return res.status(404).json({ msg: 'User not found' });
-    res.status(200).json(users);
+// Get user by ID (protected)
+router.get("/getUserById/:id", auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) return res.status(404).json({ msg: 'User not found' });
+    res.status(200).json(user);
   } catch (err) {
     res.status(500).send("Server Error");
   }
 });
+
+// Check if username exists
+router.post("/check-username", async (req, res) => {
+  const { username } = req.body;
+
+  if (!username) {
+    return res.status(400).json({ msg: "Username is required" });
+  }
+
+  try {
+    const existingUser = await User.findOne({ username });
+
+    if (existingUser) {
+      return res.status(400).json({ msg: "Username already exists" });
+    }
+
+    return res.status(200).json({ msg: "Username is available" });
+  } catch (err) {
+    res.status(500).json({ msg: "Server Error" });
+  }
+});
+
+
+// Check if email exists
+router.post("/check-email", async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ msg: "Email is required" });
+  }
+
+  try {
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      return res.status(400).json({ msg: "Email already exists" });
+    }
+
+    return res.status(200).json({ msg: "Email is available" });
+  } catch (err) {
+    res.status(500).json({ msg: "Server Error" });
+  }
+});
+
 
 router.post("/addUser", async (req, res) => {
   const { username, email, password, role, status, mcqTestsAssigned, codingTestsAssigned } = req.body;
@@ -67,8 +115,9 @@ router.post("/addUser", async (req, res) => {
   }
 });
 
-// Update user with hashed password if provided
-router.put("/updateUser/:id", async (req, res) => {
+
+// Update user by ID (protected)
+router.put("/updateUser/:id", auth, async (req, res) => {
   const { username, email, password, role } = req.body;
 
   try {
@@ -76,6 +125,11 @@ router.put("/updateUser/:id", async (req, res) => {
 
     if (!user) {
       return res.status(404).json({ msg: "User not found" });
+    }
+
+    // Optional: Add role-based or owner-based validation
+    if (req.user.id !== user.id && req.user.role !== "admin") {
+      return res.status(403).json({ msg: "Authorization denied" });
     }
 
     user.username = username || user.username;
@@ -94,19 +148,28 @@ router.put("/updateUser/:id", async (req, res) => {
   }
 });
 
-// Delete a user by ID
-router.delete("/deleteUser/:id", async (req, res) => {
+// Delete user by ID (protected)
+router.delete("/deleteUser/:id", auth, async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
+    const user = await User.findById(req.params.id);
 
     if (!user) {
       return res.status(404).json({ msg: "User not found" });
     }
 
+    // Optional: Add role-based or owner-based validation
+    if (req.user.id !== user.id && req.user.role !== "admin") {
+      return res.status(403).json({ msg: "Authorization denied" });
+    }
+
+    await user.deleteOne(); // Use deleteOne instead of remove
     res.json({ msg: "User removed" });
   } catch (err) {
+    console.error(err.message);
     res.status(500).send("Server Error");
   }
 });
+
+
 
 module.exports = router;
