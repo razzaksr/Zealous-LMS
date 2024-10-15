@@ -6,6 +6,54 @@ const jwt = require("jsonwebtoken");
 require('dotenv').config(); // or use dotenv for environment variables
 const auth = require("../middleware/authMiddleware"); // assuming this is the path to your auth middleware
 
+
+// Login User and generate JWT token
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Find the user by email
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ msg: 'User not found' });
+    }
+
+    // Compare the entered password with the hashed password stored in the database
+    const isMatch = await bcrypt.compare(password, user.password_hash);
+    if (!isMatch) {
+      return res.status(400).json({ msg: 'Invalid credentials' });
+    }
+
+    // If the password matches, create a JWT token
+    const token = jwt.sign(
+      {
+        userId: user._id,  // Include the user ID or any data you want to encode
+        username: user.username,
+        role: user.role
+      },
+      process.env.JWT_SECRET, // Use the secret key from the .env file
+      { expiresIn: '10h' }  // Token expiration time (10 hour in this case)
+    );
+
+    // Return the JWT token and user information
+    res.status(200).json({
+      msg: 'Login successful',
+      token,  // The JWT token
+      user: { username: user.username, email: user.email, role: user.role }
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.get('/profile', auth, (req, res) => {
+  // You can now access `req.user`, which contains the decoded token data
+  res.json({ msg: 'Profile data', user: req.user });
+});
+
+
+
 // Get all users (protected)
 router.get("/getAllUsers", auth, async (req, res) => {
   try {
@@ -128,9 +176,9 @@ router.put("/updateUser/:id", auth, async (req, res) => {
     }
 
     // Optional: Add role-based or owner-based validation
-    if (req.user.id !== user.id && req.user.role !== "admin") {
-      return res.status(403).json({ msg: "Authorization denied" });
-    }
+    // if (req.user.id !== user.id && req.user.role !== "admin") {
+    //   return res.status(403).json({ msg: "Authorization denied" });
+    // }
 
     user.username = username || user.username;
     user.email = email || user.email;
@@ -158,14 +206,14 @@ router.delete("/deleteUser/:id", auth, async (req, res) => {
     }
 
     // Optional: Add role-based or owner-based validation
-    if (req.user.id !== user.id && req.user.role !== "admin") {
-      return res.status(403).json({ msg: "Authorization denied" });
-    }
+    // if (req.user.id !== user.id && req.user.role !== "admin") {
+    //   return res.status(403).json({ msg: "Authorization denied" });
+    // }
 
     await user.deleteOne(); // Use deleteOne instead of remove
     res.json({ msg: "User removed" });
   } catch (err) {
-    console.error(err.message);
+    console.log(err.message);
     res.status(500).send("Server Error");
   }
 });
@@ -173,3 +221,6 @@ router.delete("/deleteUser/:id", auth, async (req, res) => {
 
 
 module.exports = router;
+
+
+

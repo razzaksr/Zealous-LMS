@@ -443,7 +443,7 @@ Content-Type: application/json
 
 ############################################ After JWT Token Implementation ############################################
 ### Login User
-POST http://localhost:5000/auth/login
+POST http://localhost:5000/users/login
 Content-Type: application/json
 
 {
@@ -453,7 +453,7 @@ Content-Type: application/json
 
 ### Example of a protected route using the token
 GET http://localhost:5000/auth/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NzExOTQsImV4cCI6MTcyOTAwNzE5NH0.1PsUj7vfDrWvME75K4I3Ol-jcZHeWe08vnpNiuKZe3s
 
 ### Get all users (requires JWT)
 GET http://localhost:5000/users/getAllUsers
