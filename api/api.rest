@@ -433,7 +433,7 @@ POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-  "username": "johndoe",
+  "username": "Noorul",
   "email": "johndoe@example.com",
   "password": "password123",
   "mobile": "1234567890"
@@ -453,17 +453,17 @@ Content-Type: application/json
 
 ### Example of a protected route using the token
 GET http://localhost:5000/auth/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5ODI5MjAsImV4cCI6MTcyOTAxODkyMH0.e0NDuEKuCp-Db5Bl2dOonGi2gDgif9twryDpkBlrWPQ
 
 ### Get all users (requires JWT)
 GET http://localhost:5000/users/getAllUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5ODI5MjAsImV4cCI6MTcyOTAxODkyMH0.e0NDuEKuCp-Db5Bl2dOonGi2gDgif9twryDpkBlrWPQ
 
 ###
 
 ### Get user by ID (requires JWT)
 GET http://localhost:5000/users/getUserById/670b4086059e40d3946786a3
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5ODI5MjAsImV4cCI6MTcyOTAxODkyMH0.e0NDuEKuCp-Db5Bl2dOonGi2gDgif9twryDpkBlrWPQ
 
 ###
 
@@ -492,13 +492,13 @@ POST http://localhost:5000/users/addUser
 Content-Type: application/json
 
 {
-  "username": "new_user",
-  "email": "new_user@example.com",
-  "password": "password123",
-  "role": "user",
-  "status": "active",
-  "mcqTestsAssigned": ["mcqTest1"],
-  "codingTestsAssigned": ["codingTest1"]
+    "username": "NoorulAshfaq",
+    "email": "noorula@gmail.com",
+    "password": "noornoor212",
+    "role": "user",
+    "status": "active",
+    "mcqTestsAssigned": ["6703e5624039f028e0552adb", "6704baf25edd518ff861102c"],
+    "codingTestsAssigned": ["6703bccac801c34498e5649a", "6704b8680fe7d132407cef49"]
 }
 
 ###

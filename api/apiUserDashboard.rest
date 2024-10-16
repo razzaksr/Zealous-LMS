@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ### Fetching particular user details who login to the application
 GET http://localhost:5000/users/getUserById/6708c037fdc16bcaed9b5be6
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjkwOTY1MDUsImV4cCI6MTcyOTEzMjUwNX0.30wiJkdWA8LNvun2ZOQR9lVnAmvcFRxTyzx32Gu-6y8
 
 
 
@@ -26,12 +26,15 @@ GET http://localhost:5000/users/getUserById/6708c037fdc16bcaed9b5be6
 
 ###  Fetching codingTestPackages assigned to the logged user
 GET http://localhost:5000/userDashboardApi/getCodingTestsToUsers/6708c037fdc16bcaed9b5be6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjkwOTY1MDUsImV4cCI6MTcyOTEzMjUwNX0.30wiJkdWA8LNvun2ZOQR9lVnAmvcFRxTyzx32Gu-6y8
 
 ### Fetching problems with respect to codingTests
 GET http://localhost:5000/userDashboardApi/getProblemsByCodingTestsId/6703bccac801c34498e5649a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5ODI5MjAsImV4cCI6MTcyOTAxODkyMH0.e0NDuEKuCp-Db5Bl2dOonGi2gDgif9twryDpkBlrWPQ
 
 ### Fetching testcases with respect to problems
 GET http://localhost:5000/userDashboardApi/getTestcasesByProblemId/6704b62e4c9f4ebc5af72dc9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5ODI5MjAsImV4cCI6MTcyOTAxODkyMH0.e0NDuEKuCp-Db5Bl2dOonGi2gDgif9twryDpkBlrWPQ
 
 
 
@@ -41,3 +44,6 @@ GET http://localhost:5000/userDashboardApi/getTestcasesByProblemId/6704b62e4c9f4
 
 ###  Fetching mcqTestPackages assigned to the logged user
 GET http://localhost:5000/userDashboardApi/getMcqTestsToUsers/6708c037fdc16bcaed9b5be6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5ODI5MjAsImV4cCI6MTcyOTAxODkyMH0.e0NDuEKuCp-Db5Bl2dOonGi2gDgif9twryDpkBlrWPQ
+
+###
