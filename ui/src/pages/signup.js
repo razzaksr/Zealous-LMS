@@ -22,6 +22,7 @@ import {
   Lock,
 } from "@mui/icons-material";
 import Logo from '../images/Zealous.png'
+import { checkUsername } from "../connect";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -49,8 +50,14 @@ const Signup = () => {
     document.body.appendChild(script);
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
+    if(e.target.name === "username" && e.target.value !== ""){
+      const response = await checkUsername({
+        "username": e.target.value,
+      });
+      console.log(response);
+    }
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };

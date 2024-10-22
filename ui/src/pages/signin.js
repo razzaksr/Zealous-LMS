@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
-import { Grid, TextField, Button, Box, Typography, Divider, Stack, Link, Checkbox, InputAdornment,  IconButton, } from '@mui/material';
-import { Email, Lock,  Visibility,VisibilityOff,} from '@mui/icons-material'; // Import icons
-import Logo from '../images/Zealous.png'
-
+import React, { useEffect, useState } from "react";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import {
+  Grid,
+  TextField,
+  Button,
+  Box,
+  Typography,
+  Divider,
+  Stack,
+  Link,
+  Checkbox,
+  InputAdornment,
+  IconButton,
+} from "@mui/material";
+import { Email, Lock, Visibility, VisibilityOff } from "@mui/icons-material"; // Import icons
+import Logo from "../images/Zealous.png";
+import { login } from "../connect";
 
 const Signin = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: false, password: false });
-
 
   const renderPasswordVisibilityToggle = () => (
     <InputAdornment position="end">
@@ -29,8 +40,8 @@ const Signin = () => {
   };
   const validateForm = () => {
     const newErrors = {
-      email: email.trim() === '',
-      password: password.trim() === '',
+      email: email.trim() === "",
+      password: password.trim() === "",
     };
     setErrors(newErrors);
     return !newErrors.email && !newErrors.password;
@@ -38,66 +49,61 @@ const Signin = () => {
 
   const handleSignIn = async () => {
     if (!validateForm()) {
-      return; // Prevent submission if validation fails
+      alert("Validation failed, retry!"); // Prevent submission if validation fails
     }
 
-    alert(`Email: ${email}\nPassword: ${password}`);
     const userData = {
       email,
       password,
     };
 
     try {
-      const response = await fetch('YOUR_BACKEND_URL_HERE', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData), // Send data in JSON format
-      });
+      const response = await login(userData);
+      console.log("Response from server:", response.msg);
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      console.log('Response from server:', data);
-      
-      // Handle the response (e.g., redirect or show a success message)
+      sessionStorage.setItem("UserAuthToken", response.token);
+      alert("Login credentials matched");
     } catch (error) {
-      console.error('Error:', error);
+      alert("Invalid credentials");
+      console.error("Error:", error);
     }
-};
-
+  };
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs";
+    const script = document.createElement("script");
+    script.src =
+      "https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs";
     script.type = "module";
     document.body.appendChild(script);
   }, []);
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', }}>
+    <div
+      style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
+    >
       {/* Top Left PNG Image */}
-      <img src={Logo} alt="Logo" className="logo" style={{          width: '200px',
-          height: '100px',}} />
+      <img
+        src={Logo}
+        alt="Logo"
+        className="logo"
+        style={{ width: "200px", height: "100px" }}
+      />
 
       {/* Half-Circle Background */}
       <div
         className="half-circle"
         style={{
-          position: 'absolute',
-          width: '100vh',
-          height: '100vh',
-          borderRadius: '50%',
-          backgroundColor: '#0c83c8',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%) translateX(50%)',
+          position: "absolute",
+          width: "100vh",
+          height: "100vh",
+          borderRadius: "50%",
+          backgroundColor: "#0c83c8",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%) translateX(50%)",
           zIndex: 1,
-          padding: '7%',
-          paddingTop: '10%',
+          padding: "7%",
+          paddingTop: "10%",
         }}
       ></div>
 
@@ -178,7 +184,12 @@ const Signin = () => {
         container
         justifyContent="center"
         alignItems="center"
-        sx={{ minHeight: '100vh', padding: { xs: '8px', sm: '16px' }, position: 'relative', zIndex: 2 }}
+        sx={{
+          minHeight: "100vh",
+          padding: { xs: "8px", sm: "16px" },
+          position: "relative",
+          zIndex: 2,
+        }}
       >
         {/* Left Side: Lottie Animation */}
         <Grid
@@ -186,29 +197,32 @@ const Signin = () => {
           xs={12}
           md={6}
           sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             marginBottom: { xs: 2, md: 0 },
-            flexDirection: 'column' // Stack items vertically
+            flexDirection: "column", // Stack items vertically
           }}
         >
           <dotlottie-player
             src="https://lottie.host/4cd76122-2bec-45c5-8904-4a0ab33b2d61/X6HOdRmTUz.json"
             background="transparent"
             speed="1"
-            style={{ width: '100%', maxWidth: '500px', height: 'auto' }} // Set a fixed height
+            style={{ width: "100%", maxWidth: "500px", height: "auto" }} // Set a fixed height
             loop
             autoplay
-            className='gif'
+            className="gif"
           ></dotlottie-player>
 
-                    {/* Typewriter Text Below the Player */}
-                    <Typography variant="h5" align="center" sx={{ mt: 0, color: '#fc7a46', fontFamily: 'Cardo' }} className="typewriter">
-            <b>LEARN, PRACTICE, IMPLEMENT,CAREER</b>
+          {/* Typewriter Text Below the Player */}
+          <Typography
+            variant="h5"
+            align="center"
+            sx={{ mt: 0, color: "#fc7a46", fontFamily: "Cardo" }}
+            className="typewriter"
+          >
+            <b>LEARN, PRACTICE, IMPLEMENT, CAREER</b>
           </Typography>
-
-
         </Grid>
 
         {/* Right Side: Sign-in Form */}
@@ -216,61 +230,64 @@ const Signin = () => {
           <Box
             className="form-container"
             sx={{
-              width: '100%',
+              width: "100%",
               maxWidth: 400,
               padding: 4,
               borderRadius: 10,
-              backgroundColor: 'white',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-              margin: 'auto',
+              backgroundColor: "white",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+              margin: "auto",
             }}
           >
-            <Typography variant="h4" align="center" sx={{ color: '#fc7a46', fontFamily: 'Cardo' }} gutterBottom>
+            <Typography
+              variant="h4"
+              align="center"
+              sx={{ color: "#fc7a46", fontFamily: "Cardo" }}
+              gutterBottom
+            >
               <b>SIGN IN</b>
             </Typography>
 
             <TextField
-  label="Email"
-  variant="outlined"
-  type='email'
-  fullWidth
-  margin="dense"
-  value={email}
-  onChange={(e) => setEmail(e.target.value)}
-  error={errors.email}
-  helperText={errors.email ? 'Email is required' : ''}
-  InputProps={{
-    startAdornment: (
-      <InputAdornment position="start" style={{color:'#fc7a46'}}>
-        <Email />
-      </InputAdornment>
-    ),
-  }}
-/>
-<TextField
-  label="Password"
-  variant="outlined"
-  fullWidth
-  margin="dense"
-  type={showPassword ? "text" : "password"}
-  value={password}
-  onChange={(e) => setPassword(e.target.value)}
-  error={errors.password}
-  helperText={errors.password ? 'Password is required' : ''}
-  InputProps={{
-    startAdornment: (
-      <InputAdornment position="start" style={{color:'#fc7a46'}}>
-        <Lock />
-      </InputAdornment>
-
-    ),
-    endAdornment:
-   password && renderPasswordVisibilityToggle(),
-  }}
-/>
+              label="Email"
+              variant="outlined"
+              type="email"
+              fullWidth
+              margin="dense"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              error={errors.email}
+              helperText={errors.email ? "Email is required" : ""}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start" style={{ color: "#fc7a46" }}>
+                    <Email />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <TextField
+              label="Password"
+              variant="outlined"
+              fullWidth
+              margin="dense"
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              error={errors.password}
+              helperText={errors.password ? "Password is required" : ""}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start" style={{ color: "#fc7a46" }}>
+                    <Lock />
+                  </InputAdornment>
+                ),
+                endAdornment: password && renderPasswordVisibilityToggle(),
+              }}
+            />
 
             <Box display="flex" alignItems="center" marginTop={1}>
-              <Checkbox style={{color:'#fc7a46'}}/>
+              <Checkbox style={{ color: "#fc7a46" }} />
               <Typography variant="body2" marginLeft={1}>
                 Keep me logged in
               </Typography>
@@ -279,13 +296,18 @@ const Signin = () => {
             <Button
               variant="contained"
               fullWidth
-              sx={{ mt: 2, borderRadius: '50px', backgroundColor: '#fc7a46' }}
+              sx={{ mt: 2, borderRadius: "50px", backgroundColor: "#fc7a46" }}
               onClick={handleSignIn} // Handle sign-in click
             >
               SIGN IN
             </Button>
 
-            <Stack direction="row" alignItems="center" spacing={2} sx={{ my: 2 }}>
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={2}
+              sx={{ my: 2 }}
+            >
               <Divider sx={{ flex: 1 }} />
               <Typography variant="body2" color="textSecondary">
                 OR
@@ -297,12 +319,19 @@ const Signin = () => {
               <GoogleLogin
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
-                style={{ width: '100%', marginTop: '8px', borderRadius: '50px' }}
+                style={{
+                  width: "100%",
+                  marginTop: "8px",
+                  borderRadius: "50px",
+                }}
               />
             </GoogleOAuthProvider>
 
             <Typography align="center" sx={{ mt: 2 }}>
-              Don't have an account? <Link href="/signup" style={{ color: '#fc7a46' }}>Sign up</Link>
+              Don't have an account?{" "}
+              <Link href="/signup" style={{ color: "#fc7a46" }}>
+                Sign up
+              </Link>
             </Typography>
           </Box>
         </Grid>
