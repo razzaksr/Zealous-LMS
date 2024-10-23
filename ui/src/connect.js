@@ -3,7 +3,7 @@ import axios from 'axios';
 const url = "http://localhost:5000";
 
 export const login = async (obj) => {
-    const response = await axios.post(`${url}/auth/login`, obj);
+    const response = await axios.post(`${url}/users/login`, obj);
     return response.data;
 }
 

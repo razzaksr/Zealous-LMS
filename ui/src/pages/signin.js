@@ -60,7 +60,7 @@ const Signin = () => {
     try {
       const response = await login(userData);
       console.log("Response from server:", response.msg);
-
+      console.log("Token:", response.token);
       sessionStorage.setItem("UserAuthToken", response.token);
       alert("Login credentials matched");
     } catch (error) {
@@ -315,7 +315,7 @@ const Signin = () => {
               <Divider sx={{ flex: 1 }} />
             </Stack>
 
-            <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+            <GoogleOAuthProvider clientId="951840937495-1a954lcu274ct75r3okbia7pr1ffo8n4.apps.googleusercontent.com">
               <GoogleLogin
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
