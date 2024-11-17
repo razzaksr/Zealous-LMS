@@ -49,13 +49,13 @@ const Header = () => {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             {/* Always show the right side items on both small and large screens */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
-              <Typography variant="h6" component="div" sx={{ marginRight: 2, color: '#0c83c8', fontSize: { xs: '0.8rem', sm: '1rem' } }}>
+              <Typography variant="h6" component="div" sx={{ marginRight: 2, color: '#0c83c8', fontSize: { xs: '0.8rem', sm: '1rem' },cursor:'pointer' }}>
                 Course
               </Typography>
-              <Typography variant="h6" component="div" sx={{ marginRight: 2, color: '#0c83c8', fontSize: { xs: '0.8rem', sm: '1rem' } }}>
+              <Typography variant="h6" component="div" sx={{ marginRight: 2, color: '#0c83c8', fontSize: { xs: '0.8rem', sm: '1rem' },cursor:'pointer' }}>
                 Students
               </Typography>
-              <Typography variant="h6" component="div" sx={{ marginRight: 2, color: '#0c83c8', fontSize: { xs: '0.8rem', sm: '1rem' } }}>
+              <Typography variant="h6" component="div" sx={{ marginRight: 2, color: '#0c83c8', fontSize: { xs: '0.8rem', sm: '1rem' } ,cursor:'pointer'}}>
                 Problem
               </Typography>
             </Box>
