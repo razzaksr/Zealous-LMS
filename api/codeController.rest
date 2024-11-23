@@ -1,0 +1,58 @@
+### Login to get JWT token
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+  "email": "vijayaprakash1709@gmail.com",
+  "password": "Vijay@123"
+}
+
+### Test code execution for C (replace <your-token-here> with the JWT from login response)
+POST http://localhost:5000/api/execute
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjkyNjAzNjEsImV4cCI6MTcyOTI5NjM2MX0.NtN0Mh_gSf22_w-QuQJ52h5dxM861ogbE4FEFwT91yA
+Content-Type: application/json
+
+{
+    "code": "#include <stdio.h>\nint main() { printf(\"Hello, World!\\n\"); return 0; }",
+    "language": "c"
+}
+
+### Test code execution for C++ (replace <your-token-here> with the JWT from login response)
+POST http://localhost:5000/api/execute
+Authorization: Bearer <your-token-here>
+Content-Type: application/json
+
+{
+    "code": "#include <iostream>\nint main() { std::cout << \"Hello, World!\\n\"; return 0; }",
+    "language": "cpp"
+}
+
+### Test code execution for Python (replace <your-token-here> with the JWT from login response)
+POST http://localhost:5000/api/execute
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjkzMDk2MzIsImV4cCI6MTcyOTM0NTYzMn0.CzF4ZLxAfgsXnXhonMl_wy7ltypaLDlyhWjWOjQ41Eg
+Content-Type: application/json
+
+{
+    "code": "print('Hello, World!')",
+    "language": "python"
+}
+
+### Test code execution for JavaScript (replace <your-token-here> with the JWT from login response)
+POST http://localhost:5000/api/execute
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjkzMDk2MzIsImV4cCI6MTcyOTM0NTYzMn0.CzF4ZLxAfgsXnXhonMl_wy7ltypaLDlyhWjWOjQ41Eg
+Content-Type: application/json
+
+{
+    "code": "console.log('Check From Rest Client');",
+    "language": "javascript"
+}
+
+### Test code execution for Java (replace <your-token-here> with the JWT from login response)
+POST http://localhost:5000/api/execute
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjkzMDk2MzIsImV4cCI6MTcyOTM0NTYzMn0.CzF4ZLxAfgsXnXhonMl_wy7ltypaLDlyhWjWOjQ41Eg
+Content-Type: application/json
+
+{
+    "code": "public class Temp { public static void main(String[] args) { System.out.println(\"Hello, World!\"); } }",
+    "language": "java"
+}

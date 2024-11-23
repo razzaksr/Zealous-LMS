@@ -19,6 +19,18 @@ const UserSchema = new mongoose.Schema(
     role: {
       type: String,
       required: true,
+    },
+    status: {
+      type: String,
+      required: true,
+    },
+    mcqTestsAssigned: {
+      type: Array,
+      required: false,
+    },
+    codingTestsAssigned: {
+      type: Array,
+      required: false,
     }
   },
   { timestamps: true }

@@ -56,8 +56,8 @@ const Overview = () => {
                 '& .MuiTab-root': { fontSize: { xs: '0.8rem', sm: '1rem' } } // Font size adjustments
               }}
             >
-              <Tab label="Topics" />
-              <Tab label="Quizzes" />
+              <Tab label="Tasks" />
+              <Tab label="Status" />
             </Tabs>
           </Box>
 

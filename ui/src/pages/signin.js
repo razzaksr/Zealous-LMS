@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import axios from 'axios';
 import {
   Grid,
   TextField,
   Button,
   Box,
   Typography,
-  Divider,
-  Stack,
-  Link,
   Checkbox,
   InputAdornment,
   IconButton,
@@ -33,10 +30,7 @@ const Signin = () => {
       </IconButton>
     </InputAdornment>
   );
-
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
+  
   const validateForm = () => {
     const newErrors = {
       email: email.trim() === "",
@@ -50,34 +44,23 @@ const Signin = () => {
     if (!validateForm()) {
       return; // Prevent submission if validation fails
     }
-
     alert(`Email: ${email}\nPassword: ${password}`);
     const userData = {
       email,
       password,
     };
-
-    try {
-      const response = await fetch("YOUR_BACKEND_URL_HERE", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData), // Send data in JSON format
-      });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-      console.log("Response from server:", data);
-
-      // Handle the response (e.g., redirect or show a success message)
-    } catch (error) {
-      console.error("Error:", error);
+    const response = await axios.post("http://localhost:5000/users/login", userData);
+    console.log(response.data)
+    if (response && response.data) {
+      sessionStorage.setItem("true", JSON.stringify(response.data));
+      window.location.assign("/");
     }
   };
+
+  const handleclear  = () =>{
+    setEmail('')
+    setPassword('')
+  }
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -91,7 +74,7 @@ const Signin = () => {
     <div
       style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
     >
-      {/* Top Left PNG Image */}
+      
       <img
         src={Logo}
         alt="Logo"
@@ -99,7 +82,7 @@ const Signin = () => {
         style={{ width: "200px", height: "100px" }}
       />
 
-      {/* Half-Circle Background */}
+     
       <div
         className="half-circle"
         style={{
@@ -521,42 +504,20 @@ const Signin = () => {
               variant="contained"
               fullWidth
               sx={{ mt: 2, borderRadius: "50px", backgroundColor: "#fc7a46" }}
-              onClick={handleSignIn} // Handle sign-in click
+              onClick={handleSignIn} 
+              // Handle sign-in click
             >
               SIGN IN
             </Button>
-
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={2}
-              sx={{ my: 2 }}
+            <Button
+              variant="contained"
+              fullWidth
+              sx={{ mt: 2, borderRadius: "50px", backgroundColor: "#fc7a46" }}
+              onClick={handleclear} 
+              // Handle sign-in click
             >
-              <Divider sx={{ flex: 1 }} />
-              <Typography variant="body2" color="textSecondary">
-                OR
-              </Typography>
-              <Divider sx={{ flex: 1 }} />
-            </Stack>
-
-            <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
-              <GoogleLogin
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                style={{
-                  width: "100%",
-                  marginTop: "8px",
-                  borderRadius: "50px",
-                }}
-              />
-            </GoogleOAuthProvider>
-
-            <Typography align="center" sx={{ mt: 2 }}>
-              Don't have an account?{" "}
-              <Link href="/signup" style={{ color: "#fc7a46" }}>
-                Sign up
-              </Link>
-            </Typography>
+              CLEAR
+            </Button>
           </Box>
         </Grid>
       </Grid>

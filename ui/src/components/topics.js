@@ -14,7 +14,7 @@ const Topics = () => {
   return (
     <Box sx={{ padding: '16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
       <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', color: '#0c83c8' }}>
-        TOPICS LIST
+        Assigned Task
       </Typography>
       <Box 
         sx={{

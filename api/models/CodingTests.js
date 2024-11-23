@@ -15,8 +15,9 @@ const CodingTestSchema = new mongoose.Schema({
         type: String, // Corresponding to 'description' text in the table
         required: true,
     },
-    testcase_id: {
-        type: Number, // Corresponding to 'testcase_id' integer in the table
+    problem_id: {
+        type: Array,
+        required: true,
     }
 }, { 
     timestamps: true // This will automatically create 'created_at' and 'updated_at' fields

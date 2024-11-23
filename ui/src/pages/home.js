@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent } from '@mui/material';
-import Hometabs from '../components/overview';
+import { Box } from '@mui/material';
+// import Hometabs from '../components/overview';
 import Header from '../components/header';
-import RewardsCard from '../components/RewardsCard';
-import CertificatesCard from '../components/CertificatesCard';
+// import RewardsCard from '../components/RewardsCard';
+// import CertificatesCard from '../components/CertificatesCard';
 import Overview from '../components/overview';
 
 const Home = () => {
@@ -21,8 +21,8 @@ const Home = () => {
         }}
       >
         <Overview/>
-        <RewardsCard />
-        <CertificatesCard />
+        {/* <RewardsCard />
+        <CertificatesCard /> */}
       </Box>
     </div>
   );

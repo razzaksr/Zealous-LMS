@@ -22,6 +22,11 @@ const quizzesData = [
     topic: 'Java',
     rating: 4.5,
   },
+  {
+    title: 'Python Journey: The Ultimate Quiz',
+    topic: 'Python',
+    rating: 4.0,
+  }
 ];
 
 const Quizzes = () => {

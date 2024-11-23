@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import axios from 'axios';
 import {
-  Grid,
   TextField,
   Button,
   Box,
   Typography,
-  Divider,
   Stack,
-  Link,
   InputAdornment,
   IconButton,
   Alert,
 } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 import {
   Visibility,
   VisibilityOff,
@@ -21,15 +19,14 @@ import {
   Phone,
   Lock,
 } from "@mui/icons-material";
-import Logo from "../images/Zealous.png";
+import Header from "../components/header";
 
-const Signup = () => {
+const Adduser = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     mobile: "",
-    password: "",
-    confirmPassword: "",
+    password: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -37,9 +34,6 @@ const Signup = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -71,10 +65,19 @@ const Signup = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validateForm()) {
-      alert(Signup`Successful! \n${JSON.stringify(formData, null, 2)}`);
-      setFormSubmitted(true);
+      try {
+        const { confirmPassword, ...dataToSend } = formData;
+        console.log("Data being sent:", dataToSend);
+        // Uncomment below line and set the appropriate backend URL
+        const response = await axios.post("http://localhost:5000/users/addUser", dataToSend);
+        console.log(response.data)
+        alert(`Signup Successful! \n${JSON.stringify(dataToSend, null, 2)}`);
+        setFormSubmitted(true);
+      } catch (error) {
+        console.error("Error during signup:", error);
+      }
     }
   };
 
@@ -104,223 +107,9 @@ const Signup = () => {
   );
 
   return (
-    <div
-      style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
-    >
-      <style>
-        {`  
-           /* Small Mobile Screens: Up to 360px */
-@media (max-width: 360px) {
-    .half-circle {
-        display: none;
-    }
-         .lottie-container{
-        margin-top :-1400px !important;
-        }
-    .form-container {
-        max-width: 250px; /* Narrower form for small screens */
-        padding: 12px; /* Reduced padding */
-        margin-top: 230px; /* Adjusted top margin */
-    }
-    .logo {
-        width: 90%; /* Slightly smaller logo */
-        height: auto;
-        position: absolute;
-        left: 60px;
-        margin-top: -30px; /* Adjusted margin */
-    }
-}
-
-/* Medium Mobile Screens: 361px to 480px */
-@media (min-width: 361px) and (max-width: 480px) {
-    .half-circle {
-        display: none;
-    }
-    .form-container {
-        max-width: 300px; /* Adjust form width */
-        padding: 16px; /* Reduce padding */
-        margin-top: 260px;
-    }
-        .lottie-container{
-        margin-top :-1450px !important;
-        }
-    .logo {
-        width: 100%; /* Full-width logo */
-        height: auto;
-        position: absolute;
-        left: 80px;
-        margin-top: -35px;
-    }
-}
-
-/* Large Mobile Screens: 481px to 600px */
-@media (min-width: 481px) and (max-width: 768px) {
-    .half-circle {
-        display: none;
-    }
-    .form-container {
-        max-width: 350px; /* Wider form */
-        padding: 18px;
-        margin-top: 300px !important; /* Adjusted top margin */
-    }
-    .logo {
-        width: 100%; /* Logo occupies full width */
-        height: auto;
-        position: absolute;
-        left: 100px;
-        margin-top: -40px;
-    }
-        .lottie-container{
-        margin-top :-1550px !important;
-        width: 300px;
-        margin-left:-200px;
-        }
-}
-    /* Small Tablet Screens: 481px to 600px */
-@media (min-width: 481px) and (max-width: 600px) {
-    .half-circle {
-        display: none; /* Remove the half-circle */
-    }
-    .form-container {
-        max-width: 450px;
-        padding: 24px;
-        margin-top: 210px; /* Adjusted for smaller tablets */
-    }
-    dotlottie-player {
-        height: 350px;
-        margin-top: 40px;
-        margin-bottom: -40px;
-    }
-    .logo {
-        width: 75%; /* Reduced size for smaller screens */
-        height: auto;
-        position: absolute;
-        left: 300px; /* Adjusted alignment */
-        margin-top: -35px;
-    }
-    .typewriter {
-        font-size: 1.4rem;
-    }
-}
-
-/* Medium Tablet Screens: 601px to 768px */
-@media (min-width: 601px) and (max-width: 768px) {
-    .half-circle {
-        display: none; /* Remove the half-circle */
-    }
-    .form-container {
-        max-width: 500px;
-        padding: 28px;
-        margin-top: -180px;
-    }
-    dotlottie-player {
-        height: 400px;
-        margin-top: -100px;
-        margin-bottom: -100px;
-    }
-    .logo {
-        width: 80%; /* Larger for medium tablets */
-        height: auto;
-        position: absolute;
-        left: 500px;
-        top: 0;
-        margin-top: -35px;
-    }
-    .typewriter {
-        font-size: 1.5rem;
-    }
-}
-
-/* Large Tablet Screens: 769px to 820px */
-@media (min-width: 769px) and (max-width: 820px) {
-    .half-circle {
-        display: none; /* Remove the half-circle */
-    }
-    .form-container {
-        max-width: 600px;
-        padding: 32px;
-        margin-top: 350px;
-    }
-    dotlottie-player {
-        height: 550px;
-        margin-top: -1100px !important;
-        margin-bottom: -60px;
-        margin-left: -100px;
-    }
-    .logo {
-        width: 90%;
-        height: auto;
-        position: relative;
-        left: 550px;
-        margin-top: -25px;
-    }
-        dotlottie-player {
-        height: 400px;
-        margin-top: -100px;
-        margin-bottom: -100px;
-    }
-}
-
-@media (min-width: 770px) and (max-width: 899px) {
-    .half-circle {
-        display: none; /* Remove the half-circle */
-    }
-    .form-container {
-        max-width: 600px;
-        padding: 32px;
-        margin-top: 350px;
-    }
-    dotlottie-player {
-        height: 550px;
-        margin-top: -1050px !important;
-        margin-bottom: -60px;
-        margin-left: -100px !important;
-    }
-    .logo {
-        width: 90%;
-        height: auto;
-        position: relative;
-        left: 550px;
-        margin-top: -25px;
-    }
-        dotlottie-player {
-        height: 400px;
-        margin-top: -100px;
-        margin-bottom: -100px;
-    }
-}
-
-/* Tablet Screens: 821px to 1024px */
-@media (min-width: 821px) and (max-width: 1024px) {
-    .half-circle {
-        display: none; /* Remove the half-circle */
-    }
-    .form-container {
-        min-width: 700px;
-        min-height: 400px;
-        padding: 32px;
-        margin-top: 500px;
-        margin-left: 40px;
-    }
-    dotlottie-player {
-        height: 450px;
-        margin-top: -550px;
-        margin-bottom: -60px;
-        margin-left: -600px;
-        width:500px !important;
-    }
-    .logo {
-        width: 90%;
-        height: auto;
-        position: relative;
-        top: 0;
-        left: 600px;
-    }
-}
-
-              `}
-      </style>
-      <img
+    <div>
+      <Header />     
+      {/* <img
         src={Logo}
         alt="Logo"
         style={{
@@ -349,16 +138,16 @@ const Signup = () => {
           paddingTop: "9%",
         }}
         className="half-circle"
-      ></div>
+      ></div> */}
 
       <Grid
         container
         justifyContent="center"
         alignItems="center"
         sx={{
-          minHeight: "100vh",
+          Height: "100vh",
           padding: { xs: "8px", sm: "16px" },
-          position: "relative",
+          position: "static",
           zIndex: 2,
         }}
       >
@@ -371,22 +160,23 @@ const Signup = () => {
               padding: 4,
               borderRadius: 10,
               backgroundColor: "white",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
               margin: "auto",
+              marginTop:'5%',
+              boxShadow:'2px 5px 10px grey'
             }}
           >
             <Typography
               variant="h4"
               align="center"
-              sx={{ color: "#fc7a46" }}
+              sx={{ color: "#0c83c8" }}
               gutterBottom
             >
-              <b>SIGN UP</b>
+              <b>ADD USER</b>
             </Typography>
 
             {formSubmitted && (
               <Alert severity="success" sx={{ mb: 2 }}>
-                Signup successful!
+                User Added successful!
               </Alert>
             )}
 
@@ -495,10 +285,18 @@ const Signup = () => {
             <Button
               variant="contained"
               fullWidth
-              sx={{ mt: 2, borderRadius: "50px", backgroundColor: "#fc7a46" }}
+              sx={{ mt: 2, borderRadius: "50px", backgroundColor: "#0c83c8" }}
               onClick={handleSubmit}
             >
-              SIGN UP
+              ADD USER
+            </Button>
+
+            <Button
+              variant="contained"
+              fullWidth
+              sx={{ mt: 2, borderRadius: "50px", backgroundColor: "#fc7a46" }}
+            >
+             clear
             </Button>
 
             <Stack
@@ -507,26 +305,7 @@ const Signup = () => {
               spacing={2}
               sx={{ my: 2 }}
             >
-              <Divider sx={{ flex: 1 }} />
-              <Typography variant="body2" color="textSecondary">
-                OR
-              </Typography>
-              <Divider sx={{ flex: 1 }} />
             </Stack>
-
-            <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
-              <GoogleLogin
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-              />
-            </GoogleOAuthProvider>
-
-            <Typography align="center" sx={{ mt: 2 }}>
-              Already have an account?{" "}
-              <Link href="/" style={{ color: "#fc7a46" }}>
-                Sign in
-              </Link>
-            </Typography>
           </Box>
         </Grid>
 
@@ -540,7 +319,7 @@ const Signup = () => {
             alignItems: "center",
           }}
         >
-          <div className="lottie-container">
+          {/* <div className="lottie-container">
             <dotlottie-player
               src="https://lottie.host/7d7bd372-b18a-4e59-8f83-b14085361089/0pJ3tTLgxM.json"
               background="transparent"
@@ -553,20 +332,11 @@ const Signup = () => {
               loop
               autoplay
             />
-          </div>
-          <style jsx>{`
-            @media (max-width: 480px) {
-              .lottie-container {
-                width: 60%;
-                margin-top: -385%;
-                margin-left: -50%;
-              }
-            }
-          `}</style>
+          </div> */}
         </Grid>
       </Grid>
     </div>
   );
 };
 
-export default Signup;
+export default Adduser;

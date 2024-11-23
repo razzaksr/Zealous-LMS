@@ -42,6 +42,10 @@ const ProblemSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'User',                       
     required: true,
+  },
+  testcase_id: {
+      type: Array,
+      required: true,
   }
 }, { 
   timestamps: true,
