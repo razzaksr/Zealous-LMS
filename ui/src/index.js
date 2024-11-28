@@ -1,33 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-<<<<<<< HEAD
-import Signup from './pages/signup';
-import Signin from './pages/signin';
-import Home from './pages/home';
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  (sessionStorage.getItem('logged'))
-    ? (
-      <BrowserRouter>
-        <Routes>
-          <Route exact path='/signup' element={<Signup />} />
-        </Routes>
-      </BrowserRouter>
-    )
-    : (
-      <BrowserRouter>
-        <Routes>
-          <Route exact path='/' element={<Signin />} />
-          <Route exact path='/signup' element={<Signup />} />
-          <Route exact path='/home' element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-    )
-);
-=======
 import Signin from './pages/signin';
 import Home from './pages/home';
 import Admin from './pages/admin';
@@ -63,4 +33,4 @@ root.render(
     </BrowserRouter>
   )
 );
->>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
+
