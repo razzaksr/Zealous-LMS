@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Box, Drawer, List, ListItemButton, ListItemText, ListItemIcon, Avatar, Badge } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, Box, Drawer, List, ListItemButton, ListItemText, ListItemIcon, Avatar, Badge, Menu, MenuItem, ListItemAvatar } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import HomeIcon from '@mui/icons-material/Home';
 import SchoolIcon from '@mui/icons-material/School';
 import GroupIcon from '@mui/icons-material/Group';
 import ProblemIcon from '@mui/icons-material/ReportProblem';
+import PersonIcon from '@mui/icons-material/Person';
+import SettingsIcon from '@mui/icons-material/Settings';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Logo from '../images/Zealous.png';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null); // State to control the account menu
 
   const toggleDrawer = (open) => {
     setDrawerOpen(open);
+  };
+
+  const handleAvatarClick = (event) => {
+    setAnchorEl(event.currentTarget); // Open the account menu
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null); // Close the account menu
   };
 
   const drawerItems = [
@@ -68,7 +80,43 @@ const Header = () => {
             </IconButton>
 
             {/* Avatar Icon */}
-            <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" />
+            <IconButton onClick={handleAvatarClick}>
+              <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" />
+            </IconButton>
+
+            {/* Account Menu */}
+            <Menu
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleMenuClose}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+            >
+              <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                  <PersonIcon fontSize="small" />
+                </ListItemIcon>
+                Profile
+              </MenuItem>
+              <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                  <SettingsIcon fontSize="small" />
+                </ListItemIcon>
+                Settings
+              </MenuItem>
+              <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                  <LogoutIcon fontSize="small" />
+                </ListItemIcon>
+                Logout
+              </MenuItem>
+            </Menu>
           </Box>
         </Toolbar>
       </AppBar>

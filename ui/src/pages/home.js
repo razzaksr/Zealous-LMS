@@ -5,6 +5,7 @@ import Header from '../components/header';
 import RewardsCard from '../components/RewardsCard';
 import CertificatesCard from '../components/CertificatesCard';
 import Overview from '../components/overview';
+import '../styles/bg.css'
 
 const Home = () => {
   return (
