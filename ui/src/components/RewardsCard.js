@@ -45,4 +45,8 @@ const RewardsCard = () => {
   );
 };
 
+<<<<<<< HEAD
 export default RewardsCard;
+=======
+export default RewardsCard;
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f

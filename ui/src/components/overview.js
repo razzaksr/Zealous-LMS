@@ -56,8 +56,13 @@ const Overview = () => {
                 '& .MuiTab-root': { fontSize: { xs: '0.8rem', sm: '1rem' } } // Font size adjustments
               }}
             >
+<<<<<<< HEAD
               <Tab label="Topics" />
               <Tab label="Quizzes" />
+=======
+              <Tab label="Tasks" />
+              <Tab label="Status" />
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
             </Tabs>
           </Box>
 
@@ -77,4 +82,8 @@ const Overview = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Overview;
+=======
+export default Overview;
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f

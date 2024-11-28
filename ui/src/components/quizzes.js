@@ -22,6 +22,14 @@ const quizzesData = [
     topic: 'Java',
     rating: 4.5,
   },
+<<<<<<< HEAD
+=======
+  {
+    title: 'Python Journey: The Ultimate Quiz',
+    topic: 'Python',
+    rating: 4.0,
+  }
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 ];
 
 const Quizzes = () => {
@@ -54,4 +62,8 @@ const Quizzes = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Quizzes;
+=======
+export default Quizzes;
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f

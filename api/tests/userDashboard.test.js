@@ -1,6 +1,10 @@
 const request = require("supertest");
 const express = require("express");
 const userDashboardApi = require("../controllers/userDashboard");
+<<<<<<< HEAD
+=======
+const jwt = require("jsonwebtoken");
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
 // Mock models
 jest.mock("../models/Users");
@@ -17,9 +21,17 @@ const app = express();
 app.use(express.json());
 app.use("/userDashboardApi", userDashboardApi);
 
+<<<<<<< HEAD
 describe("GET /getCodingTestsToUsers/:id", () => {
   it("should return 404 if no coding tests are assigned to the user", async () => {
     const mockUserId = "6703bccac801c34498e5649a";
+=======
+const mockToken = jwt.sign({ _id: "6708c037fdc16bcaed9b5be6" }, process.env.JWT_SECRET, { expiresIn: "1h" });
+
+describe("GET /getCodingTestsToUsers/:id", () => {
+  it("should return 404 if no coding tests are assigned to the user", async () => {
+    const mockUserId = "6708c037fdc16bcaed9b5be";
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     User.findById.mockResolvedValue({
       _id: mockUserId,
@@ -27,8 +39,13 @@ describe("GET /getCodingTestsToUsers/:id", () => {
     });
 
     const res = await request(app).get(
+<<<<<<< HEAD
       `/userDashboardApi/getCodingTestsToUsers/${mockUserId}`
     );
+=======
+      `/userDashboardApi/getCodingTestsToUsers/${mockUserId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(404);
     expect(res.body.msg).toEqual("No coding tests assigned to the user");
@@ -61,8 +78,14 @@ describe("GET /getCodingTestsToUsers/:id", () => {
     CodingTest.find.mockResolvedValue(mockCodingTests);
 
     const res = await request(app).get(
+<<<<<<< HEAD
       `/userDashboardApi/getCodingTestsToUsers/${mockUserId}`
     );
+=======
+      `/userDashboardApi/getCodingTestsToUsers/${mockUserId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+      ;
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual(mockCodingTests);
@@ -73,9 +96,15 @@ describe("GET /getCodingTestsToUsers/:id", () => {
 
     User.findById.mockRejectedValue(new Error("Server Error"));
 
+<<<<<<< HEAD
     const res = await request(app).get(
       `/userDashboardApi/getCodingTestsToUsers/${mockUserId}`
     );
+=======
+    const res = await request(app)
+      .get(`/userDashboardApi/getCodingTestsToUsers/${mockUserId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(500);
     expect(res.text).toEqual("Server Error");
@@ -91,9 +120,15 @@ describe("GET /getProblemsByCodingTestsId/:id", () => {
       problem_id: [],
     });
 
+<<<<<<< HEAD
     const res = await request(app).get(
       `/userDashboardApi/getProblemsByCodingTestsId/${mockCodingTestId}`
     );
+=======
+    const res = await request(app)
+      .get(`/userDashboardApi/getProblemsByCodingTestsId/${mockCodingTestId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(404);
     expect(res.body.msg).toEqual("Problems not found");
@@ -125,10 +160,17 @@ describe("GET /getProblemsByCodingTestsId/:id", () => {
 
     Problem.find.mockResolvedValue(mockProblems);
 
+<<<<<<< HEAD
     const res = await request(app).get(
       `/userDashboardApi/getProblemsByCodingTestsId/${mockCodingTestId}`
     );
 
+=======
+    const res = await request(app)
+      .get(`/userDashboardApi/getProblemsByCodingTestsId/${mockCodingTestId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+      
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual(mockProblems);
   });
@@ -138,9 +180,15 @@ describe("GET /getProblemsByCodingTestsId/:id", () => {
 
     CodingTest.findById.mockRejectedValue(new Error("Server Error"));
 
+<<<<<<< HEAD
     const res = await request(app).get(
       `/userDashboardApi/getProblemsByCodingTestsId/${mockCodingTestId}`
     );
+=======
+    const res = await request(app)
+      .get(`/userDashboardApi/getProblemsByCodingTestsId/${mockCodingTestId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(500);
     expect(res.text).toEqual("Server Error");
@@ -156,9 +204,15 @@ describe("GET /getTestcasesByProblemId/:id", () => {
       testcase_id: [],
     });
 
+<<<<<<< HEAD
     const res = await request(app).get(
       `/userDashboardApi/getTestcasesByProblemId/${mockProblemId}`
     );
+=======
+    const res = await request(app)
+      .get(`/userDashboardApi/getTestcasesByProblemId/${mockProblemId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(404);
     expect(res.body.msg).toEqual("Test cases not found");
@@ -182,9 +236,16 @@ describe("GET /getTestcasesByProblemId/:id", () => {
 
     Testcase.find.mockResolvedValue(mockTestcases);
 
+<<<<<<< HEAD
     const res = await request(app).get(
       `/userDashboardApi/getTestcasesByProblemId/${mockProblemId}`
     );
+=======
+    const res = await request(app)
+      .get(`/userDashboardApi/getTestcasesByProblemId/${mockProblemId}`)
+      .set("Authorization", `Bearer ${mockToken}`);
+    ;
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual(mockTestcases);
@@ -195,9 +256,14 @@ describe("GET /getTestcasesByProblemId/:id", () => {
 
     Problem.findById.mockRejectedValue(new Error("Server Error"));
 
+<<<<<<< HEAD
     const res = await request(app).get(
       `/userDashboardApi/getTestcasesByProblemId/${mockProblemId}`
     );
+=======
+      const res = await request(app).get(`/userDashboardApi/getTestcasesByProblemId/${mockProblemId}`)
+            .set("Authorization", `Bearer ${mockToken}`);
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
     expect(res.statusCode).toEqual(500);
     expect(res.text).toEqual("Server Error");

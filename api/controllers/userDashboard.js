@@ -6,10 +6,18 @@ const CodingTest = require("../models/CodingTests");
 const McqTest = require("../models/McqTests");
 const Problem = require("../models/Problems");
 const Testcase = require("../models/Testcase");
+<<<<<<< HEAD
 
 // Microservices for coding tests
 
 router.get('/getCodingTestsToUsers/:id', async (req, res) => {
+=======
+const auth = require("../middleware/authMiddleware");
+
+// Microservices for coding tests
+
+router.get('/getCodingTestsToUsers/:id', auth, async (req, res) => {
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
     try{
         const loggedUser = await User.findById(req.params.id);
         if (!loggedUser.codingTestsAssigned || loggedUser.codingTestsAssigned.length === 0) {
@@ -22,7 +30,11 @@ router.get('/getCodingTestsToUsers/:id', async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
 router.get('/getProblemsByCodingTestsId/:id', async (req, res) => {
+=======
+router.get('/getProblemsByCodingTestsId/:id', auth, async (req, res) => {
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
     try{
         const codingTest = await CodingTest.findById(req.params.id);
         if (!codingTest.problem_id || codingTest.problem_id.length === 0) return res.status(404).json({ msg: 'Problems not found' });
@@ -33,7 +45,11 @@ router.get('/getProblemsByCodingTestsId/:id', async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
 router.get('/getTestcasesByProblemId/:id', async (req, res) => {
+=======
+router.get('/getTestcasesByProblemId/:id', auth, async (req, res) => {
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
     try{
         const problem = await Problem.findById(req.params.id);
         if (!problem.testcase_id || problem.testcase_id.length === 0) return res.status(404).json({ msg: 'Test cases not found' });
@@ -46,7 +62,11 @@ router.get('/getTestcasesByProblemId/:id', async (req, res) => {
 
 // Microservices for mcq tests
 
+<<<<<<< HEAD
 router.get('/getMcqTestsToUsers/:id', async (req, res) => {
+=======
+router.get('/getMcqTestsToUsers/:id', auth, async (req, res) => {
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
     try{
         const loggedUser = await User.findById(req.params.id);
         if (!loggedUser.mcqTestsAssigned || loggedUser.mcqTestsAssigned.length === 0) {

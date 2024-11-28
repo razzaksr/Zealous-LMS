@@ -5,6 +5,7 @@ GET http
 ### user apis
 
 GET http://localhost:5000/users/getAllUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzQwMTllNzBkNTMzOTM1MjcwYTIyODQiLCJ1c2VybmFtZSI6ImRoYXJ1biIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMjI1NDM2NCwiZXhwIjoxNzMyMjkwMzY0fQ.WrINEHB_A6Z3r-FPVLEzCVb5EPduaZ6z1KE1XWM9jFI
 
 ###
 
@@ -443,7 +444,11 @@ Content-Type: application/json
 
 ############################################ After JWT Token Implementation ############################################
 ### Login User
+<<<<<<< HEAD
 POST http://localhost:5000/auth/login
+=======
+POST http://localhost:5000/users/login
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 Content-Type: application/json
 
 {
@@ -452,12 +457,21 @@ Content-Type: application/json
 }
 
 ### Example of a protected route using the token
+<<<<<<< HEAD
 GET http://localhost:5000/auth/profile
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
 
 ### Get all users (requires JWT)
 GET http://localhost:5000/users/getAllUsers
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
+=======
+GET http://localhost:5000/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzQwMTllNzBkNTMzOTM1MjcwYTIyODQiLCJ1c2VybmFtZSI6ImRoYXJ1biIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMjI1NDM2NCwiZXhwIjoxNzMyMjkwMzY0fQ.WrINEHB_A6Z3r-FPVLEzCVb5EPduaZ6z1KE1XWM9jFI
+
+### Get all users (requires JWT)
+GET http://localhost:5000/users/getAllUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MjkxMzg5OTcsImV4cCI6MTcyOTE3NDk5N30.HeLOCcPaplkivxMf4pgokKkauLxijTMNF8ne6yv8AgY
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
 
 ###
 
@@ -521,5 +535,9 @@ Content-Type: application/json
 DELETE http://localhost:5000/users/deleteUser/670ded223fb760097d1959eb
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBiNDA4NjA1OWU0MGQzOTQ2Nzg2YTMiLCJ1c2VybmFtZSI6IlZpamF5MTIzNDUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mjg5NjU4MDYsImV4cCI6MTcyOTAwMTgwNn0.IDMwRBAZWoxuwlzYK9kNgELTYN-CIYWipYdE968d0Yk
 
+<<<<<<< HEAD
 ###
 
+=======
+###
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f

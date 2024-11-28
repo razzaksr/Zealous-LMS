@@ -14,7 +14,11 @@ const Topics = () => {
   return (
     <Box sx={{ padding: '16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
       <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', color: '#0c83c8' }}>
+<<<<<<< HEAD
         TOPICS LIST
+=======
+        Assigned Task
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
       </Typography>
       <Box 
         sx={{
@@ -44,4 +48,8 @@ const Topics = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Topics;
+=======
+export default Topics;
+>>>>>>> ae23ec7f2d08608c6b6861fab13a9871a71eca7f
